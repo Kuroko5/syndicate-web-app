@@ -1,0 +1,106 @@
+<div class="document">
+  <div class="header">
+    <h1 mat-dialog-title *ngIf="data.mode === 'add'">
+      {{ "documents.add" | i18next }}
+    </h1>
+    <h1 mat-dialog-title *ngIf="data.mode === 'edit'">
+      {{ "documents.edit" | i18next }}
+    </h1>
+    <mat-icon svgIcon="close" id="close" mat-dialog-close></mat-icon>
+  </div>
+  <mat-dialog-content>
+    <form [formGroup]="documentForm" id="documentForm" (ngSubmit)="onSubmit()">
+
+      <!-- Document Title -->
+      <div class="documentName">
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'documents.name' | i18next}}</mat-label>
+          <input
+            matInput
+            type="text"
+            id="title"
+            name="title"
+            formControlName="title"
+            required />
+            <mat-error class="error" *ngIf="documentForm.get('title').hasError('required')">
+              {{ 'form.missing.name' | i18next }}
+            </mat-error>
+        </mat-form-field>
+      </div>
+
+      <!-- Document Category -->
+      <div class="documentType">
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'documents.category' | i18next}}</mat-label>
+          <mat-select required formControlName="category">
+            <mat-option *ngFor="let category of categories" [value]="category">
+              {{ category }}
+            </mat-option>
+          </mat-select>
+          <mat-error class="error" *ngIf="documentForm.get('category').hasError('required')">
+            {{ 'form.missing.category' | i18next }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <!-- Operator -->
+      <div class="reportOperator">
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'datatable.operator' | i18next}}</mat-label>
+          <input
+            matInput
+            type="text"
+            id="operator"
+            name="operator"
+            formControlName="operator"
+            [readonly]="true" />
+        </mat-form-field>
+      </div>
+    </form>
+    <div class="importDocument">
+      <div>
+        <p>{{ "documents.file" | i18next }}<span> *</span></p>
+        <input
+          #fileInput
+          type="file"
+          required="true"
+          (change)="onFileChanged($event)"
+          accept="application/pdf, image/jpeg, image/jpg, image/png"
+          onclick="this.value=null" />
+        <button mat-button (click)="fileInput.click()">
+          <mat-icon svgIcon="add"></mat-icon>
+          {{ "documents.addFile" | i18next }}
+        </button>
+      </div>
+      <div class="file">
+        <span *ngIf="data.mode === 'edit' && !selectedFile">{{ data.fileName }}</span>
+        <span *ngIf="!tooLarge">{{selectedFile?.name}}</span>
+        <span *ngIf="tooLarge" class="tooLarge">{{ "documents.tooLarge" | i18next}}</span>
+        <mat-progress-spinner
+          *ngIf="loading"
+          [mode]="'determinate'"
+          [value]="progress"
+          diameter="20">
+      </mat-progress-spinner>
+      </div>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <!-- Cancel button -->
+    <button mat-button mat-dialog-close id="cancelBtn">
+      {{ "global.cancel" | i18next }}
+    </button>
+
+    <!-- Adding button -->
+    <button
+      id="createBtn"
+      mat-button
+      form="documentForm"
+      [disabled]="!documentForm.valid ||  (data.mode === 'add' && !selectedFile) || loading"
+      [ngClass]="{'disabledBtn': !documentForm.valid || (data.mode === 'add' && !selectedFile) || loading}">
+      <mat-spinner *ngIf="loading" class="spinner" diameter="20"></mat-spinner>
+      <span *ngIf="data.mode === 'add'">{{ "global.add" | i18next }}</span>
+      <span *ngIf="data.mode === 'edit'">{{ "global.edit" | i18next }}</span>
+  </button>
+  </mat-dialog-actions>
+</div>

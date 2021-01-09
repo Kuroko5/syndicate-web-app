@@ -1,0 +1,40 @@
+<div class="description">
+  <div class="header">
+    <h1 mat-dialog-title>
+      {{ "admin.profile.details" | i18next }} {{ data.label }}
+    </h1>
+    <mat-icon svgIcon="close" id="close" [mat-dialog-close]="true"></mat-icon>
+  </div>
+  <mat-dialog-content>
+    <div>
+      <div>
+        <div class="title">
+          {{ "admin.views_list" | i18next }}
+        </div>
+        <div class="row" *ngFor="let view of data.views">
+            {{ view.label }}
+        </div>
+      </div>
+      <div>
+        <div class="title">
+          {{ "admin.permissions_list" | i18next }}
+        </div>
+        <mat-accordion>
+          <mat-expansion-panel *ngFor="let permission of data.permissions">
+            <mat-expansion-panel-header>
+              {{ permission.category }}
+            </mat-expansion-panel-header>
+            <div class="row" *ngFor="let p of permission.permissions">
+              {{ p.label }}
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="true">
+      {{ "global.close" | i18next }}
+    </button>
+  </mat-dialog-actions>
+</div>

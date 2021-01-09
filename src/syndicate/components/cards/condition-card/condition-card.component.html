@@ -1,0 +1,7 @@
+<syndicate-card
+  [title]="card.label"
+  [type]="cardType.CONDITION"
+  [color]="'#004289'">
+    <syndicate-card-list *ngIf="conditions" [data]="conditions" (selectEmitter)="displayConditionDetail($event)" [type]="cardType.CONDITION" [column]="card.column"></syndicate-card-list>
+    <p *ngIf="!conditions">{{ 'conditions.noConditions' | i18next }}</p>
+</syndicate-card>

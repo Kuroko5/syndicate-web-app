@@ -1,0 +1,54 @@
+<div class="container">
+  <mat-dialog-content>
+    <mat-spinner *ngIf="loading" class="spinner" diameter="60"></mat-spinner>
+    <div *ngIf="!loading">
+      <mat-radio-group>
+        <div class="category">
+          <span>{{ 'global.pages.name.conditions' | i18next }}</span>
+        </div>
+        <mat-list role="list">
+          <mat-list-item *ngFor="let c of conditions">
+            <div class="variable">
+              <mat-checkbox
+                *ngIf="multiple"
+                class="checkbox"
+                [disableRipple]="true"
+                [checked]="isChecked(c.rule)"
+                (change)="onChange(c)">
+                {{ c.rule }}
+              </mat-checkbox>
+              <mat-radio-button
+                *ngIf="!multiple"
+                [disableRipple]="true"
+                [value]="c.rule"
+                [checked]="isChecked(c.rule)"
+                (change)="onChange(c)"
+              >
+                {{ c.rule }}
+              </mat-radio-button>
+            </div>
+            <mat-icon
+              svgIcon="info"
+              matTooltip="{{ c.descr }}"
+              [matTooltipPosition]="'left'">
+            </mat-icon>
+          </mat-list-item>
+        </mat-list>
+      </mat-radio-group>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button mat-dialog-close id="cancelBtn">
+      {{ "global.cancel" | i18next }}
+    </button>
+    <button
+      mat-button
+      id="confirmBtn"
+      (click)="sendVariables()"
+      [disabled]="selectedConditions.length === 0 || send"
+      [ngClass]="{'disabledBtn': selectedConditions.length === 0 || send}">
+      <mat-spinner *ngIf="send" class="spinner" diameter="20"></mat-spinner>
+      {{ "global.set" | i18next }}
+    </button>
+  </mat-dialog-actions>
+</div>

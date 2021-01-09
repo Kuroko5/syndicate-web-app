@@ -1,0 +1,109 @@
+.login {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+  .logo {
+    height: 38px;
+    width: 159px;
+    margin-bottom: 20px;
+    img {
+      width: 100%;
+    }
+  }
+  .loginForm {
+    height: 332px;
+    width: 327px;
+    border-radius: 6px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.3);
+    .header {
+      border-bottom: 2px solid rgba(33, 33, 33, 0.1);
+      h1 {
+        color: #004289;
+        font-family: "OpenSansBold";
+        font-size: 24px;
+        font-weight: bold;
+        margin: 19px 43px;
+      }
+    }
+    .content {
+      form {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: 30px 32px 0px 32px;
+        mat-form-field {
+          width: 100%;
+          color: #626262;
+          .error {
+            color: #ed1c2c;
+            font-size: 10px;
+            margin-top: 0;
+          }
+        }
+      }
+    }
+    .wrongCredentials {
+      min-height: 14px;
+      height: 14px;
+      p {
+        color: #ed1c2c;
+        font-size: 14px;
+        width: 100%;
+        text-align: center;
+        margin: 0;
+      }
+    }
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+      position: relative;
+      button {
+        height: 40px;
+        width: 193px;
+        border-radius: 20px;
+        background-color: #004289;
+        color: #ffffff;
+        font-family: "OpenSans";
+        font-size: 14px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        &:hover {
+          background-color: rgba(16, 76, 144, 0.1);
+          color: #ffffff;
+        }
+        &.disabledBtn {
+          background-color: rgba(16, 76, 144, 0.1);
+          cursor: default;
+        }
+      }
+    }
+  }
+}
+.eye, .hide {
+  margin-left: 15px;
+  color: #6e7f95;
+  cursor: pointer;
+  &:hover {
+    color: #004289;
+  }
+  &.info {
+    color: #004289;
+  }
+ 
+}
+.spinner {
+  display: inline-block;
+  position: absolute;
+  left: 20px;
+}

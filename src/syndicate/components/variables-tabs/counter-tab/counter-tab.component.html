@@ -1,0 +1,12 @@
+<syndicatendicate-datatable
+  [type]="'counter'"
+  [data]="counters"
+  [dataCount]="count"
+  [displayedColumns]="['label', 'value', 'type', 'createdAt', 'date', 'action']"
+  [pageSizeOptions]="[25, 50, 100]"
+  [searchbar]="true"
+  [select]="true"
+  [selectLabel]="'type'"
+  [footer]="true"
+  (refreshDataEmitter)="onRefresh($event)">
+</syndicatendicate-datatable>

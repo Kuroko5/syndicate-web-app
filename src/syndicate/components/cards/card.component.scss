@@ -1,0 +1,90 @@
+.card {
+  border-radius: 6px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.3);
+  height: 420px;
+  position: relative;
+  &.cardCondition {
+    min-height: 230px;
+    height: 380px;
+  }
+  .header {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid rgba(16, 76, 144, 0.1);
+    position: relative;
+    padding: 10px;
+    h2 {
+      margin: 0 0 0 16px;
+      font-family: "OpenSans";
+      font-size: 24px;
+    }
+    .count {
+      position: absolute;
+      right: 20px;
+      border: 1px solid;
+      border-radius: 20px;
+      margin-left: 10px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-family: "OpenSans";
+      font-weight: bold;
+    }
+  }
+  .content {
+    height: 335px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .icon {
+    border: 1px solid;
+    border-radius: 5px;
+    width: 28px;
+    height: 28px;
+    background-color: #004289;
+  }
+  .iconDefects {
+    border: 1px solid;
+    border-radius: 5px;
+    width: 28px;
+    height: 28px;
+    background-color: #FF0000;
+  }
+  .iconAlarms {
+    border: 1px solid;
+    border-radius: 5px;
+    width: 28px;
+    height: 28px;
+    background-color: #ed9c1c;
+  }
+  .title {
+    margin-left: 10px;
+    font-weight: bold;
+    font-family: "OpenSans";
+  }
+  .footer {
+    text-align: center;
+    margin: 20px;
+    position: absolute;
+    width: -webkit-fill-available;
+    bottom: 0;
+    button {
+      height: 40px;
+      width: 120px;
+      border: 2px solid #004289;
+      border-radius: 20px;
+      font-family: "OpenSans";
+      color:  #004289;
+      font-size: 12px;
+      font-weight: bold;
+      line-height: inherit;
+      background-color: #ffffff;
+      outline: none;
+      cursor: pointer;
+    }
+  }
+}

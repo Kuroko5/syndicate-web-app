@@ -1,0 +1,55 @@
+.hardware {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  syndicate-header {
+    order: 1;
+  }
+
+  .container {
+    flex: 1;
+    order: 2;
+    background-color: #ffffff;
+    padding: 20px 12.5px;
+
+    .content {
+      display: flex;
+      flex-flow: row wrap;
+
+      syndicate-hardware-scheme {
+        min-width: 100%;
+      }
+    }
+
+    button {
+      height: 40px;
+      border-radius: 20px;
+      background-color: #004289;
+      color: #ffffff;
+      font-family: "OpenSans";
+      font-size: 14px;
+      cursor: pointer;
+      outline: none;
+      margin: 0 0 0 82px;
+    }
+
+    .order {
+      float: right;
+      color: #6E7F95;
+      border: 2px solid #6E7F95;
+      background-color: white;
+    }
+
+    .icon-order {
+      height: 20px;
+      width: 20px;
+      vertical-align: text-bottom;
+    }
+
+    .add {
+      background-color: #004289;
+      color: #ffffff;
+    }
+  }
+}

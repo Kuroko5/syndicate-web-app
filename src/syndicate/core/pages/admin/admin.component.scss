@@ -1,0 +1,14 @@
+.admin {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  syndicatendicate-header {
+    order: 1;
+  }
+  .container {
+    flex: 1;
+    order: 2;
+    width: 100%;
+    background-color: #ffffff;
+  }
+}

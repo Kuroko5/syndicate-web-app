@@ -1,0 +1,20 @@
+<syndicate-datatable
+  [type]="'devices'"
+  [data]="devices" 
+  [dataCount]="count"
+  [displayedColumns]="['_id', 'constructionId', 'machineId', 'equipmentId', 'ip', 'enable', 'action']"
+  [pageSizeOptions]="[25, 50, 100]" 
+  [select]="false" 
+  [footer]="true" 
+  [add]="true"
+  [addLabel]="'config.device.add.title' | i18next" 
+  [addPermission]="'CONFIG_DEVICES_CREATE'"
+  [editPermission]="'CONFIG_DEVICES_UPDATE'" 
+  [deletePermission]="'CONFIG_DEVICES_DELETE'"
+  (refreshDataEmitter)="onRefresh($event)" 
+  (displayDetailEmitter)="onDisplayDetail($event)"
+  (editEmitter)="onEdit($event)"
+  [deletedItemIndex]="deletedIndex" 
+  (removeEmitter)="onRemoveDevice($event)"
+  (addEmitter)="onAdd()">
+</syndicate-datatable>

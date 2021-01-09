@@ -1,0 +1,177 @@
+<div class="device">
+  <div class="header">
+    <h1 mat-dialog-title *ngIf="data.mode === 'add'">
+      {{ "config.device.add.title" | i18next }}
+    </h1>
+    <h1 mat-dialog-title *ngIf="data.mode === 'edit'">
+      {{ "config.device.edit.title" | i18next }}
+    </h1>
+    <mat-icon svgIcon="close" id="close" mat-dialog-close></mat-icon>
+  </div>
+  <mat-dialog-content>
+    <form id="deviceForm" [formGroup]="deviceForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <!-- Device Id -->
+        <div class="id">
+          <mat-form-field appearance="outline">
+            <mat-label>{{ 'config.device.fields._id' | i18next }}</mat-label>
+            <input
+              matInput
+              type="text"
+              id="_id"
+              name="_id"
+              formControlName="_id"
+              [readonly]="data.mode === 'edit'"
+              [ngClass]="{'disabledInput': data.mode === 'edit'}"
+              required />
+              <mat-error class="error" *ngIf="deviceForm.get('_id').hasError('required')">
+                {{ 'config.device.error._id' | i18next }}
+              </mat-error>
+          </mat-form-field>
+        </div>
+        <!-- IP Adress -->
+        <div class="ip">
+          <mat-form-field appearance="outline">
+            <mat-label>{{ 'config.device.fields.ip' | i18next }}</mat-label>
+            <input
+              matInput
+              type="text"
+              id="ip"
+              name="ip"
+              formControlName="ip"
+              pattern="((^|\.)((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]?\d))){4}$"
+              required />
+              <mat-error class="error" *ngIf="deviceForm.get('ip').hasError('required')">
+                {{ 'config.device.error.ip' | i18next }}
+              </mat-error>
+              <mat-error class="error" *ngIf="deviceForm.get('ip').hasError('pattern')">
+                {{ 'config.device.error.not_ip' | i18next }}
+              </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <!-- ConstructionId -->
+      <div class="construction">
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'config.device.fields.constructionId' | i18next }}</mat-label>
+          <input
+            matInput
+            type="text"
+            id="constructionId"
+            name="constructionId"
+            formControlName="constructionId"
+            required />
+            <mat-error class="error" *ngIf="deviceForm.get('constructionId').hasError('required')">
+              {{ 'config.device.error.constructionId' | i18next }}
+            </mat-error>
+        </mat-form-field>
+      </div>
+      <!-- MachineId -->
+      <div class="machineId">
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'config.device.fields.machineId' | i18next }}</mat-label>
+          <input
+            matInput
+            type="text"
+            id="machineId"
+            name="machineId"
+            formControlName="machineId"
+            required />
+            <mat-error class="error" *ngIf="deviceForm.get('machineId').hasError('required')">
+              {{ 'config.device.error.machineId' | i18next }}
+            </mat-error>
+        </mat-form-field>
+      </div>
+      <!-- EquipmentId -->
+      <div class="equipmentId">
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'config.device.fields.equipmentId' | i18next }}</mat-label>
+          <input
+            matInput
+            type="text"
+            id="equipmentId"
+            name="equipmentId"
+            formControlName="equipmentId"
+            required />
+            <mat-error class="error" *ngIf="deviceForm.get('equipmentId').hasError('required')">
+              {{ 'config.device.error.equipmentId' | i18next }}
+            </mat-error>
+        </mat-form-field>
+      </div>
+      <!-- Rack -->
+      <div class="rack">
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'config.device.fields.rack' | i18next }}</mat-label>
+          <input
+            matInput
+            type="number"
+            id="rack"
+            name="rack"
+            formControlName="rack"
+            required />
+            <mat-error class="error" *ngIf="deviceForm.get('rack').hasError('required')">
+              {{ 'config.device.error.rack' | i18next }}
+            </mat-error>
+            <mat-error class="error" *ngIf="deviceForm.get('rack').hasError('min')">
+              {{ 'config.device.error.number_min' | i18next }}
+            </mat-error>
+        </mat-form-field>
+      </div>
+      <!-- Slot -->
+      <div class="slot">
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'config.device.fields.slot' | i18next }}</mat-label>
+          <input
+            matInput
+            type="number"
+            id="slot"
+            name="slot"
+            formControlName="slot"
+            required />
+            <mat-error class="error" *ngIf="deviceForm.get('slot').hasError('required')">
+              {{ 'config.device.error.slot' | i18next }}
+            </mat-error>
+            <mat-error class="error" *ngIf="deviceForm.get('slot').hasError('min')">
+              {{ 'config.device.error.number_min' | i18next }}
+            </mat-error>
+        </mat-form-field>
+      </div>
+      <!-- Periods -->
+      <div class="period">
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'config.device.fields.period' | i18next }}</mat-label>
+          <input
+            matInput
+            type="number"
+            id="period"
+            name="period"
+            formControlName="period"
+            required />
+            <mat-error class="error" *ngIf="deviceForm.get('period').hasError('required')">
+              {{ 'config.device.error.period' | i18next }}
+            </mat-error>
+            <mat-error class="error" *ngIf="deviceForm.get('period').hasError('min')">
+              {{ 'config.device.error.number_min' | i18next }}
+            </mat-error>
+        </mat-form-field>
+      </div>
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <!-- Cancel button -->
+    <button mat-button mat-dialog-close id="cancelBtn">
+      {{ "global.cancel" | i18next }}
+    </button>
+
+    <!-- Adding button -->
+    <button
+      id="createBtn"
+      mat-button
+      form="deviceForm"
+      [disabled]="!deviceForm.valid"
+      [ngClass]="{'disabledBtn': !deviceForm.valid }">
+      <span *ngIf="data.mode === 'add'">{{ "global.add" | i18next }}</span>
+      <span *ngIf="data.mode === 'edit'">{{ "global.edit" | i18next }}</span>
+  </button>
+  </mat-dialog-actions>
+</div>

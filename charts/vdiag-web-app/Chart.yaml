@@ -1,0 +1,5 @@
+apiVersion: v1
+appVersion: "1.0"
+description: Tunnel Factory - Valise Diagnostic - Web Application Chart
+name: syndicate-web-app
+version: 0.1.0

@@ -1,0 +1,46 @@
+<mat-tab-group [disableRipple]="true" [animationDuration]="0" class="variablesTabs">
+  <!--
+    Variables tab
+  -->
+  <mat-tab *syndicatendicatePermissions="['VARIABLES_INPROGRESS']">
+    <ng-template mat-tab-label>
+      <div id="variables">
+        <mat-icon class="iconVar" svgIcon="gauge"></mat-icon>
+        <span>{{ "variables.inProgress" | i18next }}</span>
+      </div>
+    </ng-template>
+    <ng-template matTabContent>
+      <syndicatendicate-variablesyndicateab></syndicate-variable-tab>
+    </ng-template>
+  </mat-tab>
+
+  <!--
+    Historical tab
+  -->
+  <mat-tab *syndicatendicatePermissions="['VARIABLES_HISTORY']">
+    <ng-template mat-tab-label>
+      <div id="historical">
+        <mat-icon svgIcon="graphsVar"></mat-icon>
+        <span>{{ "variables.historical" | i18next }}</span>
+      </div>
+    </ng-template>
+    <ng-template matTabContent>
+      <syndicatendicate-historysyndicateab></syndicate-history-tab>
+    </ng-template>
+  </mat-tab>
+
+  <!--
+    Counter tab
+  -->
+  <mat-tab *syndicatendicatePermissions="['VARIABLES_COUNTERS']">
+    <ng-template mat-tab-label>
+      <div id="counter">
+        <mat-icon svgIcon="counter"></mat-icon>
+        <span>{{ "variables.counter.title" | i18next }}</span>
+      </div>
+    </ng-template>
+    <ng-template matTabContent>
+      <syndicatendicate-countersyndicateab></syndicate-counter-tab>
+    </ng-template>
+  </mat-tab>
+</mat-tab-group>

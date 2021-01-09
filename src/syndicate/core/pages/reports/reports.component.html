@@ -1,0 +1,14 @@
+<div class="reports">
+  <syndicatendicate-header [pageName]="pageNsyndicatee"></syndicate-header>
+  <div class="container">
+    <syndicatendicate-datatable [type]="'report'" [data]="data" [dataCount]="count"
+      [displayedColumns]="['name', 'createdAt', 'reportType', 'operator', 'action']" [pageSizeOptions]="[25, 50, 100]"
+      [select]="true" [selectLabel]="'type'" [options]="types" [footer]="true" [searchbar]="true" [inputSearch]="search"
+      [inputSelect]="type" [selectType]="'type'" [add]="true" [addLabel]="'reports.create'"
+      [addPermission]="'REPORTS_CREATE'" (addEmitter)="onCreateReport()" [editPermission]="'REPORTS_UPDATE'"
+      [deletePermission]="'REPORTS_DELETE'" [deletedItemIndex]="deletedReportIndex"
+      (refreshDataEmitter)="onRefreshData($event)" (displayDetailEmitter)="onDisplayDetail($event)"
+      (removeEmitter)="onRemoveReport($event)" (editEmitter)="onEditReport($event)">
+    </syndicatendicate-datatable>
+  </div>
+</div>

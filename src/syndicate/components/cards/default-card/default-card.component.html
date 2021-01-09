@@ -1,0 +1,8 @@
+<syndicate-card
+  [title]="card.label"
+  [type]="cardType.DEFAULT"
+  [color]="'#ed1c2c'"
+  [count]="defaultsCount">
+    <syndicate-card-list *ngIf="defaults" [data]="defaults" [type]="cardType.DEFAULT" (selectEmitter)="displayDefaultDetail($event)"></syndicate-card-list>
+    <p *ngIf="!defaults">{{ 'alerts.noDefects' | i18next }}</p>
+</syndicate-card>

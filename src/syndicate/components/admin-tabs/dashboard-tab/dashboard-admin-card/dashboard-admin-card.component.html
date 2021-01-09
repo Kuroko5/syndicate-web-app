@@ -1,0 +1,12 @@
+<div class="card-drag_element">
+  <div class="card-drag_element-header">
+    <p>{{ card.label }}</p>
+    <ng-content></ng-content>
+  </div>
+  <p>{{ "admin.dashboard.card.type" | i18next }}</p>
+  <p [style.font-family]="'OpenSansBold'">{{ 'admin.cards.types.' + card.type | i18next }}</p>
+  <div class="actions">
+    <mat-icon svgIcon="edit" (click)="onEdit()"></mat-icon>
+    <mat-icon svgIcon="trash" (click)="onDelete()"></mat-icon>
+  </div>
+</div>

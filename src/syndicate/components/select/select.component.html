@@ -1,0 +1,27 @@
+<div class="select">
+  <h3 *ngIf="selectType !== 'config_variables' && selectType !== 'variables'">{{ "datatable.select." + label | i18next }}</h3>
+  <mat-form-field appearance="outline">
+    <mat-label *ngIf="selectType === 'config_variables' || selectType === 'variables'">{{ "datatable.select." + label | i18next }}</mat-label>
+    <mat-select disableRipple (selectionChange)="onChange($event)" name="option" [(ngModel)]="selected" [compareWith]="compareObjects">
+      <mat-option value="all" selected *ngIf="label !== 'type' && selectType !== 'type' && selectType !== 'config_variables' && selectType !== 'variables'">{{ "datatable.select.all" | i18next }}</mat-option>
+      <mat-option value="" selected *ngIf="selectType === 'config_variables' || selectType === 'variables'">{{ "datatable.select.all" | i18next }}</mat-option>
+      <mat-option value="all" selected *ngIf="label === 'type' && selectType !== 'type'">{{ "datatable.select.types.all" | i18next }}</mat-option>
+      <mat-option value="all" selected *ngIf="selectType === 'type'">{{ "datatable.select.allType" | i18next }}</mat-option>
+      <div *ngIf="selectType === 'variables'">
+        <mat-option *ngFor="let option of options" [value]="option">
+          <div *ngIf="option.level">
+            {{ option._id }}
+          </div>
+          <div *ngIf="!option.level" [ngStyle]="{ 'margin-left': '15px' }">
+            {{ option._id }}
+          </div>
+        </mat-option>
+      </div>
+      <div *ngIf="selectType !== 'variables'">
+        <mat-option *ngFor="let option of options" [value]="option">
+          {{ option }}
+        </mat-option>
+      </div>
+    </mat-select>
+  </mat-form-field>
+</div>

@@ -1,0 +1,96 @@
+<div class="report">
+  <div class="header">
+    <h1 mat-dialog-title *ngIf="data.mode === 'create'">
+      {{ "reports.new" | i18next }}
+    </h1>
+    <h1 mat-dialog-title *ngIf="data.mode === 'edit'">
+      {{ "reports.edit" | i18next }}
+    </h1>
+    <mat-icon svgIcon="close" id="close" mat-dialog-close></mat-icon>
+  </div>
+  <mat-dialog-content>
+    <form [formGroup]="reportForm" id="reportForm" (ngSubmit)="onSubmit()">
+
+      <!-- Report Title -->
+      <div class="reportName">
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'reports.name' | i18next}}</mat-label>
+          <input
+            matInput
+            type="text"
+            id="name"
+            name="name"
+            formControlName="name"
+            required />
+            <mat-error class="error" *ngIf="reportForm.get('name').hasError('required')">
+              {{ 'form.missing.name' | i18next }}
+            </mat-error>
+        </mat-form-field>
+      </div>
+
+      <!-- Report Type -->
+      <div class="reportType">
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'reports.type' | i18next}}</mat-label>
+          <mat-select required formControlName="reportTypeId">
+            <mat-option *ngFor="let type of types" [value]="type._id">
+              {{ type.label }}
+            </mat-option>
+          </mat-select>
+          <mat-error class="error" *ngIf="reportForm.get('reportTypeId').hasError('required')">
+            {{ 'form.missing.type' | i18next }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <!-- Operator -->
+      <div class="reportOperator">
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'datatable.operator' | i18next}}</mat-label>
+          <input
+            matInput
+            type="text"
+            id="operator"
+            name="operator"
+            formControlName="operator"
+            [readonly]="true" />
+        </mat-form-field>
+      </div>
+
+      <!-- Report Description -->
+      <div class="description">
+        <mat-form-field appearance="outline">
+          <mat-label>{{ "global.description" | i18next}}</mat-label>
+          <textarea
+            matInput
+            type="text"
+            id="description"
+            name="description"
+            formControlName="description"
+            required></textarea>
+            <mat-error class="error" *ngIf="reportForm.get('description').hasError('required')">
+              {{ 'form.missing.description' | i18next }}
+            </mat-error>
+        </mat-form-field>
+      </div>
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <!-- Cancel button -->
+    <button mat-button mat-dialog-close id="cancelBtn">
+      {{ "global.cancel" | i18next }}
+    </button>
+
+    <!-- Creation button -->
+    <button
+      id="createBtn"
+      mat-button
+      form="reportForm"
+      [disabled]="!reportForm.valid || loading"
+      [ngClass]="{'disabledBtn': !reportForm.valid || loading}">
+      <mat-spinner *ngIf="loading" class="spinner" diameter="20"></mat-spinner>
+      <span *ngIf="data.mode === 'create'">{{ "global.create" | i18next }}</span>
+      <span *ngIf="data.mode === 'edit'">{{ "global.edit" | i18next }}</span>
+  </button>
+  </mat-dialog-actions>
+</div>

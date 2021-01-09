@@ -1,0 +1,7 @@
+<syndicate-card
+  [title]="card.label"
+  [type]="cardType.EQUIPMENT"
+  [color]="'#004289'"
+  [style.grid-column-start]="'span ' + card.column">
+    <syndicate-card-list *ngIf="views" [data]="views" [type]="cardType.EQUIPMENT" [column]="2" (selectEmitter)="goToView($event)"></syndicate-card-list>
+</syndicate-card>

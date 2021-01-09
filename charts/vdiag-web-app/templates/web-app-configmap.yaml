@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Chart.Name }}-configmap
+  namespace: {{ .Values.metadata.namespace }}
+data:
+  app-config.json: |
+    {
+      "ENVIRONEMENT": "INT",
+      "PRODUCTION": true,
+      "API_URL": "{{ .Values.env.apiURL }}",
+      "TIMER": "{{ .Values.env.refreshTime }}"
+    }

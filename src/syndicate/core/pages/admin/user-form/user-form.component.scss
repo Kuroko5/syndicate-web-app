@@ -1,0 +1,164 @@
+.form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  syndicate-header {
+    order: 1;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    order: 2;
+    background-color: #ffffff;
+    padding: 20px 28px;
+
+    #user {
+      width: 100%;
+      height: 100%;
+
+      .infos-basic {
+        display: flex;
+        flex-direction: column;
+
+        mat-label {
+          color: #152935;
+          font-family: "OpenSans";
+          font-size: 14px;
+          letter-spacing: 0;
+          line-height: 17.09px;
+        }
+
+        mat-form-field {
+          margin-top: 7px;
+          width: 100%;
+          font-family: "OpenSans";
+          font-size: 18px;
+
+          ::ng-deep .mat-form-field-outline {
+            top: 0;
+            color: #9AA7B6;
+          }
+
+          ::ng-deep .mat-form-field-infix {
+            border-top: 0;
+          }
+
+          ::placeholder {
+            color: #5A6872;
+            font-family: "OpenSans";
+            font-size: 16px;
+            letter-spacing: 0;
+            line-height: 22px;
+          }
+
+          .error {
+            color: #ed1c2c;
+            font-size: 10px;
+            margin-top: 0;
+          }
+        }
+      }
+    }
+
+    .infos-user {
+      p {
+        color: #152935;
+        font-family: "OpenSans";
+        font-size: 14px;
+        letter-spacing: 0;
+        line-height: 17.09px;
+      }
+
+      &-profile{
+        margin-bottom: 22px;
+
+        &_label {
+          color: #152935;
+          font-family: "OpenSans";
+          font-size: 14px;
+          letter-spacing: 0;
+          line-height: 17.09px;
+        }
+      }
+    }
+
+    mat-expansion-panel-header {
+      font-size: 16px;
+      padding: 5px 30px 5px 30px;
+      background-color: #F7F7F7;
+      font-weight: bold;
+      color: #152935;
+    }
+  }
+
+  #back {
+    margin: 0 0 0 24px;
+    width: auto;
+
+    span {
+      margin: 0 15px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      mat-icon {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .btn {
+    height: 40px;
+    width: 200px;
+    border-radius: 20px;
+    font-family: "OpenSans";
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+    line-height: 17px;
+    background-color: #134E91;
+    color: white;
+
+    &.stroked {
+      border-color: #134E91;
+      background-color: white;
+      color: #134E91;
+      border-width: 2px;
+    }
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    border-top: 2px solid rgba(16,76,144,0.1);
+    margin: 0 -28px;
+    padding: 22px 0;
+    margin-top: 64px;
+
+    #cancel {
+      margin: 0 0 0 24px;
+    }
+
+    #submit {
+      margin: 0 24px 0 0;
+    }
+  }
+}
+
+mat-checkbox {
+  margin-right: 12px;
+
+  .mat-checkbox-inner-container {
+    height: 18px;
+    width: 18px;
+  }
+}
+
+::ng-deep.mat-checkbox-checked.mat-accent .mat-checkbox-background,
+::ng-deep.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: #004289;
+}
+

@@ -1,0 +1,41 @@
+<mat-sidenav-container class="sidenav">
+  <mat-sidenav mode="side" opened>
+    <div class="logo" (click)="onGoToHome()">
+      <img src="assets/imgs/app-name@2x.png" alt="valise diagnostic"/>
+    </div>
+    <div class="menu">
+      <syndicatendicate-navigasyndicateon></syndicate-navigation>
+    </div>
+    <div class="footer">
+      <div class="logout" [matMenuTriggerFor]="menu">
+        <mat-icon class="user" svgIcon="user_circle"></mat-icon>
+        <span class="username">
+            {{ user[0] }} {{ user[1] }}
+        </span>
+        <mat-icon class="arrow" svgIcon="triangle"></mat-icon>
+      </div>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <main>
+      <mat-card [ngClass]="{'mat-card' : router?.url !== '/dashboard' && router?.url !== '/views'}">
+        <router-outlet></router-outlet>
+      </mat-card>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<mat-menu #menu="matMenu" yPosition="above">
+  <button *syndicatendicatePermissions="['CONFIG']" mat-menu-item aria-label="config" (click)="onConfig()">
+    <span>{{ "global.pages.name.config" | i18next | uppercase }}</span>
+    <mat-icon [ngStyle]="{'color': '#6E7F95'}" svgIcon="config"></mat-icon>
+  </button>
+  <button *syndicatendicatePermissions="['ADMIN']" mat-menu-item aria-label="admin" (click)="onAdmin()">
+    <span>{{ "global.pages.name.admin" | i18next | uppercase }}</span>
+    <mat-icon [ngStyle]="{'color': '#6E7F95'}" svgIcon="settings"></mat-icon>
+  </button>
+  <button mat-menu-item aria-label="logout" (click)="onLogout()">
+    <span>{{ "sidenav.logout" | i18next | uppercase }}</span>
+    <mat-icon [ngStyle]="{'color': '#6E7F95'}" svgIcon="logout"></mat-icon>
+  </button>
+</mat-menu>

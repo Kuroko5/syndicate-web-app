@@ -1,0 +1,98 @@
+.device {
+  .header {
+    position: relative;
+    padding: 27px 43px 43px 43px;
+    border-bottom: 1px solid rgba(16, 76, 144, 0.1);
+    h1 {
+      margin: 0;
+      color: #004289;
+      font-family: "OpenSansBold";
+      font-size: 24px;
+      font-weight: bold;
+    }
+    #close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      cursor: pointer;
+    }
+  }
+  mat-dialog-content {
+    margin: 0;
+    padding: 33px 43px 0 43px;
+    #deviceForm {
+      .row {
+        display: inline-block;
+        width: 100%;
+        mat-form-field {
+          width: 45%;
+        }
+      }
+      .disabledInput {
+        color: rgba(16, 76, 144, 0.1);
+        cursor: default;
+        &:hover {
+          border: rgba(16, 76, 144, 0.1);;
+        }
+      }
+      mat-form-field {
+        width: 30%;
+        margin: 10px;
+        font-family: "OpenSans";
+        font-size: 18px;
+        float: left;
+        .error {
+          color: #ed1c2c;
+          font-size: 10px;
+          margin-top: 0;
+        }
+      }
+    }
+  }
+  mat-dialog-actions {
+    margin: 0;
+    justify-content: space-between;
+    padding: 33px 43px;
+    button {
+      height: 40px;
+      width: 193px;
+      border-radius: 20px;
+      font-family: "OpenSans";
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+      outline: none;
+    }
+    #cancelBtn {
+      background-color: #ffffff;
+      color: #004289;
+      border: 1px solid #004289;
+      &:hover {
+        background-color: #004289;
+        color: #ffffff;
+      }
+    }
+    #createBtn {
+      background-color: #004289;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      &:hover {
+        background-color: rgba(16, 76, 144, 0.1);
+        color: #ffffff;
+      }
+      &.disabledBtn {
+        background-color: rgba(16, 76, 144, 0.1);
+        cursor: default;
+      }
+    }
+  }
+}
+.spinner {
+  display: inline-block;
+  position: absolute;
+  left: 20px;
+  bottom: 10px;
+}

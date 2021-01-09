@@ -1,0 +1,101 @@
+<div class="form">
+  <syndicatendicate-header [pageName]="pageNsyndicatee"></syndicate-header>
+  <div class="container">
+    <mat-horizontal-stepper (selectionChange)="onStepChange($event)" [linear]="true" #stepper>
+      <mat-step
+        label="{{ 'admin.profile.infos.step' | i18next }}"
+        [stepControl]="profileForm"
+      >
+        <form id="profile" [formGroup]="profileForm">
+          <div class="infos-basic">
+            <!-- Name input -->
+            <div class="name">
+              <mat-label>{{ 'admin.profile.infos.name' | i18next }}</mat-label>
+              <mat-form-field appearance="outline">
+                <input
+                  matInput
+                  type="text"
+                  id="name"
+                  name="name"
+                  formControlName="name"
+                  pattern="[a-zA-Z0-9 ]+"
+                  placeholder="{{ 'admin.profile.infos.name_hint' | i18next }}"
+                  required />
+                <mat-error class="error">
+                  {{ 'admin.profile.infos.name_error' | i18next }}
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+            <!-- Description input -->
+            <div class="description">
+              <mat-label>{{ 'admin.profile.infos.description' | i18next }}</mat-label>
+              <mat-form-field appearance="outline">
+                <input
+                  matInput
+                  type="text"
+                  id="description"
+                  name="description"
+                  formControlName="description"
+                  placeholder="{{ 'admin.profile.infos.description_hint' | i18next }}"
+                  required />
+                <mat-error class="error">
+                  {{ 'admin.profile.infos.description_error' | i18next }}
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+        </form>
+        <div class="infos-profile">
+          <p>{{ 'admin.profile.infos.title' | i18next }}</p>
+          <mat-accordion [multi]="true">
+            <mat-expansion-panel *ngFor="let category of allPermissions; index as i">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <mat-checkbox
+                    class="checkbox"
+                    [disableRipple]="true"
+                    [checked]="allChecked(i)"
+                    [indeterminate]="someChecked(i)"
+                    (click)="$event.stopPropagation()"
+                    [color]="'primary'"
+                    (change)="onCheckedAll($event, i)">
+                  </mat-checkbox>
+                  <span>{{ category[0].category }}</span>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="permission-label" *ngFor="let permission of category; index as j">
+                <mat-checkbox [checked]="permission.checked" (change)="onPermissionChecked($event, i, j)"></mat-checkbox>
+                <span>{{ permission.label }}</span>
+              </div>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+      </mat-step>
+      <mat-step
+        label="{{ 'admin.profile.views.step' | i18next }}">
+        <div class="step">
+          <p>{{ 'admin.profile.views.title' | i18next }}</p>
+          <div class="view-label" *ngFor="let view of allViews; index as i">
+            <mat-checkbox
+              class="checkbox"
+              [disableRipple]="true"
+              [checked]="view.checked"
+              [color]="'primary'"
+              (change)="onViewChecked($event, i)">
+            </mat-checkbox>
+            <span>{{ view.label }}</span>
+          </div>
+        </div>
+      </mat-step>
+    </mat-horizontal-stepper>
+    <div class="buttons">
+      <button mat-stroked-button id="cancel" class="btn stroked" (click)="previousStepClick()">
+        {{ (currentStepIndex < 1 ? "global.cancel" : "global.back") | i18next }}
+      </button>
+      <button mat-stroked-button class="btn" (click)="nextStepClick()" *ngIf="profileForm.valid && permissionsChecked()">
+        {{ (currentStepIndex < 1 ? "global.next" : (update ? "global.edit" : "global.create")) | i18next }}
+      </button>
+    </div>
+  </div>
+</div>

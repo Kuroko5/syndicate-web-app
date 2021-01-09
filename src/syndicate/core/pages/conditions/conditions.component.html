@@ -1,0 +1,17 @@
+<div class="conditions">
+  <syndicate-header [pageName]="pageName"></syndicate-header>
+  <div class="container">
+    <syndicate-datatable
+      [data]="conditions"
+      [type]="'condition'"
+      [select]="false"
+      [searchbar]="false"
+      [datepicker]="false"
+      [displayedColumns]="['result', 'descr', 'action']"
+      [pageSizeOptions]="[]"
+      [footer]="false"
+      (refreshDataEmitter)="onRefreshConditions($event)"
+      (displayDetailEmitter)="onDisplayDetail($event)">
+    </syndicate-datatable>
+  </div>
+</div>

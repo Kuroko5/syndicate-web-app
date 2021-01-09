@@ -1,0 +1,23 @@
+<div class="condition">
+  <div class="header" [style.color]="data.condition.result ? '#32af39' : '#ed1c2c'">
+    <mat-icon svgIcon="check" class="result" inline *ngIf="data.condition.result"></mat-icon>
+    <mat-icon svgIcon="error" class="result" inline *ngIf="!data.condition.result"></mat-icon>
+    <h1 mat-dialog-title [style.color]="data.condition.result ? '#32af39' : '#ed1c2c'">
+      {{ data.condition.descr }}
+    </h1>
+    <mat-icon svgIcon="close" id="close" [mat-dialog-close]="true"></mat-icon>
+  </div>
+  <mat-dialog-content>
+    <div *ngFor="let stacks of data.condition.stack">
+      <div class="condition" *ngFor="let condition of stacks.stack">
+          <div class="round" [style.backgroundColor]="condition.result ? '#32af39' : '#ed1c2c'"></div>
+          {{ condition.condition }}
+      </div>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="true">
+      {{ "global.close" | i18next }}
+    </button>
+  </mat-dialog-actions>
+</div>

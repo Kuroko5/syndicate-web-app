@@ -1,0 +1,65 @@
+<div class="description">
+  <div class="header">
+    <h1 mat-dialog-title>
+      {{ data.name }}
+      <span *ngIf="data.variable">{{ data.variable.vId }}</span>
+    </h1>
+    <mat-icon svgIcon="close" id="close" [mat-dialog-close]="true"></mat-icon>
+    <div class="subTitle">
+      <span>{{ data.type }}</span>
+      <span *ngIf="data.variable">{{ data.variable.c }}</span>
+      <div class="date">
+        <mat-icon svgIcon="clock"></mat-icon>
+        <p *ngIf="data.variable">
+          {{ data.variable.d | amLocal | amDateFormat: 'DD/MM/YYYY' }}
+          {{ "global.at" | i18next }}
+          {{ data.variable.d | amLocal | amDateFormat: 'HH:mm:ss'}}
+        </p>
+        <p *ngIf="data.createdAt">
+          {{ data.createdAt | amLocal | amDateFormat: 'DD/MM/YYYY' }}
+          {{ "global.at" | i18next }}
+          {{ data.createdAt | amLocal | amDateFormat: 'HH:mm:ss'}}
+        </p>
+      </div>
+      <div class="enable" *ngIf="config">
+        <div [ngStyle]="{ 'background-color': (data.variable.enable) ? '#5EC77E' : '#FF4A58' }" class="circle"></div>
+        <div *ngIf="!data.variable.enable">{{ "config.state.disable" | i18next }}</div>
+        <div *ngIf="data.variable.enable">{{ "config.state.enable" | i18next }}</div>
+      </div>
+    </div>
+  </div>
+  <mat-dialog-content>
+    <div class="value" *ngIf="!config && data.variable && (data.variable.val !== null || data.variable.val !== undefined)">
+      <h4>{{ "global.currentValue" | i18next }}</h4>
+      <p>{{ data.variable.val }}
+        <span *ngIf="data.variable">{{ data.variable.unit }}</span>
+      </p>
+    </div>
+    <div class="operator" *ngIf="data.operator">
+      <h4>{{ "global.operator" | i18next }}</h4>
+      <p>{{ data.operator | nameFormat }}</p>
+    </div>
+    <div class="infos" *ngIf="config">
+      <span><b>{{ 'global.unit' | i18next }} : </b>{{ data.variable.unit }}</span>
+      <span><b>{{ 'global.category' | i18next }} : </b>{{ data.variable.category }}</span>
+      <span><b>{{ 'global.device' | i18next }} : </b>{{ data.variable.deviceId }}</span>
+      <span><b>{{ 'global.location' | i18next }} : </b>{{ data.variable.location }}</span>
+      <span><b>{{ 'global.format' | i18next }} : </b>{{ data.variable.format }}</span>
+    </div>
+    <div class="infos" *ngIf="!config">
+      <span><b>{{ 'global.unit' | i18next }} : </b>{{ data.variable.unit }}</span>
+      <span><b>{{ 'global.category' | i18next }} : </b>{{ data.variable.c }}</span>
+      <span><b>{{ 'global.location' | i18next }} : </b>{{ data.variable.location }}</span>
+    </div>
+    <div class="description">
+      <h4>{{ "global.description" | i18next }}</h4>
+      <p>{{ data.description }}</p>
+      <p *ngIf="data.variable">{{ data.variable.descr }}</p>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="true">
+      {{ "global.close" | i18next }}
+    </button>
+  </mat-dialog-actions>
+</div>

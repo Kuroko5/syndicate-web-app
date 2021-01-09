@@ -1,0 +1,65 @@
+<div class="form">
+  <syndicatendicate-header [pageName]="pageNsyndicatee"></syndicate-header>
+  <div class="container">
+    <form id="user" [formGroup]="userForm">
+      <div class="infos-basic">
+        <!-- Identifier input -->
+        <div class="identifier">
+          <mat-label>{{ 'admin.user.infos.name' | i18next }}</mat-label>
+          <mat-form-field appearance="outline">
+            <input
+              matInput
+              type="text"
+              id="identifier"
+              name="identifier"
+              formControlName="identifier"
+              pattern="[a-z.-]+"
+              placeholder="{{ 'admin.user.infos.name_hint' | i18next }}"
+              required />
+            <mat-error class="error">
+              {{ 'admin.user.infos.name_error' | i18next }}
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <!-- Password input -->
+        <div class="password">
+          <mat-label>{{ 'admin.user.infos.password' | i18next }}</mat-label>
+          <mat-form-field appearance="outline">
+            <input
+              matInput
+              type="password"
+              id="password"
+              name="password"
+              formControlName="password"
+              placeholder="{{ 'admin.user.infos.password_hint' | i18next }}"
+              [required]="!update" />
+          </mat-form-field>
+        </div>
+      </div>
+    </form>
+    <div class="infos-user">
+      <p>{{ 'admin.user.infos.title' | i18next }}</p>
+      <div class="infos-user-profile" *ngFor="let profile of profileList; index as i">
+        <mat-checkbox
+          class="checkbox"
+          [color]="'primary'"
+          [disableRipple]="true"
+          (change)="onProfileCheck($event, i)"
+          [checked]="profile.checked"
+        >
+        </mat-checkbox>
+        <span class="infos-user-profile_label">{{ profile.label }}</span>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button mat-stroked-button id="cancel" class="btn stroked" (click)="onCancel()">
+        {{ "global.cancel" | i18next }}
+      </button>
+      <button mat-stroked-button class="btn" id="submit" (click)="onSubmit()" *ngIf="userForm.valid && profileChecked()">
+        {{ (update ? "global.edit" : "global.create") | i18next }}
+      </button>
+    </div>
+  </div>
+</div>

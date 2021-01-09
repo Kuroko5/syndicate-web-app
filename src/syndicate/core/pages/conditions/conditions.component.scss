@@ -1,0 +1,13 @@
+.conditions {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  syndicate-header {
+    order: 1;
+  }
+  .container {
+    flex: 1;
+    order: 2;
+    background-color: #ffffff;
+  }
+}

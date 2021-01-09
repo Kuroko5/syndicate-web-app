@@ -1,0 +1,65 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Chart.Name }}
+  namespace: {{ .Values.metadata.namespace }}
+  labels:
+{{ include "syndicate-web-app.labels" . | indent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+{{ include "syndicate-web-app.matchLabels" . | indent 6 }}
+  template:
+    metadata:
+      labels:
+{{ include "syndicate-web-app.labels" . | indent 8 }}
+    spec:
+    {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.container.port }}
+              protocol: TCP
+          volumeMounts:
+            - name: environment-volume
+              mountPath: "{{ .Values.image.environmentVolumePath }}/{{ .Values.image.environmentFile }}"
+              subPath: {{ .Values.image.environmentFile }}
+          readinessProbe:
+            tcpSocket:
+              port: {{ .Values.container.port }}
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            tcpSocket:
+              port: {{ .Values.container.port }}
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          volumeMounts:
+            - name: environment-volume
+              mountPath: "{{ .Values.image.environmentVolumePath }}/{{ .Values.image.environmentFile }}"
+              subPath: {{ .Values.image.environmentFile }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      volumes:
+        - name: environment-volume
+          configMap:
+            name: {{ .Chart.Name }}-configmap
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+    {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+    {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}

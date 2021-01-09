@@ -1,0 +1,121 @@
+<div class="form">
+  <syndicate-header [pageName]="pageName"></syndicate-header>
+  <div class="container">
+    <form id="station-form" [formGroup]="stationForm">
+      <button
+        mat-stroked-button
+        *ngIf="currentStepIndex > 0"
+        id="back"
+        class="btn stroked"
+        (click)="previousStepClick()"
+      >
+        <span>
+          <mat-icon svgIcon="back_arrow"></mat-icon>
+          {{ "hardware_architecture.add_station.back" | i18next }}
+        </span>
+      </button>
+      <mat-horizontal-stepper (selectionChange)="onStepChange($event)" [linear]="true" #stepper formArrayName="formArray">
+        <mat-step
+          formGroupName="0"
+          [stepControl]="formArray?.get([0])"
+          label="{{ 'hardware_architecture.add_station.infos.step' | i18next }}">
+          <!-- Name input -->
+          <div class="name">
+            <mat-label>{{ 'hardware_architecture.add_station.infos.name' | i18next}}</mat-label>
+            <mat-form-field appearance="outline">
+              <input
+                matInput
+                type="text"
+                id="name"
+                name="name"
+                formControlName="label"
+                placeholder="{{ 'hardware_architecture.add_station.infos.name_hint' | i18next }}"
+                required />
+              <mat-error class="error" *ngIf="formArray.get([0, 'label']).hasError('required')">
+                {{ 'hardware_architecture.add_station.infos.missing_name' | i18next }}
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <!-- IP input -->
+          <div class="ip">
+            <mat-label>{{ 'hardware_architecture.add_station.infos.ip' | i18next}}</mat-label>
+            <mat-form-field appearance="outline">
+              <input
+                matInput
+                type="text"
+                id="ip"
+                name="name"
+                formControlName="ip"
+                placeholder="{{ 'hardware_architecture.add_station.infos.ip_hint' | i18next }}"
+                pattern="((^|\.)((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]?\d))){4}$"
+                required />
+              <mat-error class="error" *ngIf="formArray.get([0, 'ip']).hasError('pattern')">
+                {{ 'hardware_architecture.add_station.infos.wrong_ip_format' | i18next }}
+              </mat-error>
+              <mat-error class="error" *ngIf="formArray.get([0, 'ip']).hasError('required')">
+                {{ 'hardware_architecture.add_station.infos.missing_ip' | i18next }}
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </mat-step>
+        <mat-step
+          label="{{ 'hardware_architecture.add_station.communication.step' | i18next }}">
+          <div class="step">
+            <p class="description">
+              {{ 'hardware_architecture.add_station.communication.description' | i18next }}
+            </p>
+            <button mat-button class="btn" (click)="addCommunicationVariable()" type="button">
+              <mat-icon>add</mat-icon>
+              <span>{{ 'hardware_architecture.add_station.communication.add_variable' | i18next }}</span>
+            </button>
+            <div class="variable" *ngIf="communicationVariable">
+              {{ communicationVariable.vId }} - {{ communicationVariable.descr }}
+              <mat-icon svgIcon="close" (click)="removeCommunicationVariable()"></mat-icon>
+            </div>
+          </div>
+        </mat-step>
+        <mat-step
+          label="{{ 'hardware_architecture.add_station.hardware.step' | i18next }}">
+          <div class="step">
+            <p class="description">
+              {{ 'hardware_architecture.add_station.hardware.description' | i18next }}
+            </p>
+            <button mat-button class="btn" (click)="addHardwareVariable()" type="button">
+              <mat-icon>add</mat-icon>
+              <span>{{ 'hardware_architecture.add_station.hardware.add_variable' | i18next }}</span>
+            </button>
+            <div class="variable" *ngIf="hardwareVariable">
+              {{ hardwareVariable.vId }} - {{ hardwareVariable.descr }}
+              <mat-icon svgIcon="close" (click)="removeHardwareVariable()"></mat-icon>
+            </div>
+          </div>
+        </mat-step>
+        <mat-step
+          label="{{ 'hardware_architecture.add_station.variables.step' | i18next }}">
+          <div class="step">
+            <p class="description">
+              {{ 'hardware_architecture.add_station.variables.description' | i18next }}
+            </p>
+            <button mat-button class="btn" (click)="addEquipmentsVariable()" type="button">
+              <mat-icon>add</mat-icon>
+              <span>{{ 'hardware_architecture.add_station.variables.add_variables' | i18next }}</span>
+            </button>
+            <div class="variable" *ngFor="let variable of equipmentsVariables">
+              {{ variable.vId }} - {{ variable.descr }}
+              <mat-icon svgIcon="close" (click)="removeEquipmentsVariable(variable.vId)"></mat-icon>
+            </div>
+          </div>
+        </mat-step>
+      </mat-horizontal-stepper>
+    </form>
+    <div class="buttons">
+      <button mat-stroked-button id="cancel" class="btn stroked" (click)="cancelForm()">
+        {{ "global.cancel" | i18next }}
+      </button>
+      <button mat-stroked-button class="btn" (click)="nextStepClick()" type="submit">
+        {{ (currentStepIndex < 3 ? "global.next" : (update ? "hardware_architecture.add_station.update" : "hardware_architecture.add_station.create")) | i18next }}
+      </button>
+    </div>
+  </div>
+</div>

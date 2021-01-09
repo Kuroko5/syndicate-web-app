@@ -1,0 +1,7 @@
+{
+  "ENVIRONEMENT": "local",
+  "PRODUCTION": true,
+  "API_URL": "http://localhost:3001/api/v0/",
+  "TIMER": 10000,
+  "_comment": "TIMER value in milliseconds, type : number"
+}

@@ -1,0 +1,44 @@
+<div class="documents">
+  <syndicatendicate-header [pageName]="pageNsyndicatee"></syndicate-header>
+  <div class="container">
+    <div class="head">
+      <div class="back" (click)="back()">
+        <div class="icon">
+          <mat-icon svgIcon="back"></mat-icon>
+        </div>
+        {{ "documents.back_to_folders" | i18next }}
+      </div>
+      <div class="label">
+        <span>{{ this.label }}</span>
+      </div>
+    </div>
+
+    <syndicatendicate-datatable
+      [type]="'document'"
+      [data]="data"
+      [dataCount]="count"
+      [displayedColumns]="['title', 'updatedAt', 'documentType', 'documentCategory', 'operator', 'action']"
+      [pageSizeOptions]="[25, 50, 100]"
+      [select]="true"
+      [searchbar]="true"
+      [selectLabel]="'type'"
+      [options]="types"
+      [footer]="true"
+      [inputSearch]="search"
+      [inputSelect]="type"
+      [selectType]="'type'"
+      [add]="true"
+      [addLabel]="'documents.add'"
+      [addPermission]="'DOCUMENTS_CREATE'"
+      [editPermission]="'DOCUMENTS_UPDATE'"
+      [deletePermission]="'DOCUMENTS_DELETE'"
+      [deletedItemIndex]="deletedDocumentIndex"
+      (refreshDataEmitter)="onRefreshData($event)"
+      (displayDetailEmitter)="onDisplayDetail($event)"
+      (removeEmitter)="onRemoveDocument($event)"
+      (editEmitter)="onEditDocument($event)"
+      (addEmitter)="onAddDocument()">
+    </syndicatendicate-datatable>
+
+  </div>
+</div>

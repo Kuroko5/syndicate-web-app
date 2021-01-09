@@ -1,0 +1,16 @@
+<div class="color-picker">
+  <div class="opened" *ngIf="show">
+    <div class="header">
+      <p>{{ "colorPicker.edit" | i18next }}</p>
+    </div>
+
+    <div class="colors">
+      <div (click)="changeColor(paint)" *ngFor="let paint of defaultColors" class="circle-opener"
+        [ngStyle]="{'background': paint}"></div>
+    </div>
+
+  </div>
+  <div class="summary-info" (click)="toggleColors()">
+    <div class="circle" [ngStyle]="{'background': color}"></div>
+  </div>
+</div>

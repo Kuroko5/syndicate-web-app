@@ -1,0 +1,45 @@
+<mat-tab-group [disableRipple]="true" [animationDuration]="0" class="configTabs" [selectedIndex]="previousIndex">
+  <!--
+    Plugins tab
+  -->
+  <mat-tab *syndicatePermissions="['CONFIG_DEVICES']">
+    <ng-template mat-tab-label>
+      <div id="plugins">
+        <mat-icon svgIcon="plugin"></mat-icon>
+        <span>{{ "config.device.title" | i18next }}</span>
+      </div>
+    </ng-template>
+    <ng-template matTabContent>
+      <syndicate-device-tab></syndicate-device-tab>
+    </ng-template>
+  </mat-tab>
+  <!--
+    Variables tab
+  -->
+  <mat-tab *syndicatePermissions="['CONFIG_VARIABLES']">
+    <ng-template mat-tab-label>
+      <div id="variables">
+        <mat-icon svgIcon="variable"></mat-icon>
+        <span>{{ "config.variable.title" | i18next }}</span>
+      </div>
+    </ng-template>
+    <ng-template matTabContent>
+      <syndicate-variable-tab></syndicate-variable-tab>
+    </ng-template>
+  </mat-tab>
+
+  <!--
+    Counters tab
+  -->
+  <mat-tab *syndicatePermissions="['CONFIG_COUNTERS']">
+    <ng-template mat-tab-label>
+      <div id="counters">
+        <mat-icon svgIcon="counter"></mat-icon>
+        <span>{{ "config.counter.title" | i18next }}</span>
+      </div>
+    </ng-template>
+    <ng-template matTabContent>
+      <syndicate-counter-tab></syndicate-counter-tab>
+    </ng-template>
+  </mat-tab>
+</mat-tab-group>

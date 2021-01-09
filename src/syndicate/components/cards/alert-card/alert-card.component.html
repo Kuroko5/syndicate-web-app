@@ -1,0 +1,8 @@
+<syndicate-card
+  [title]="card.label"
+  [type]="cardType.ALERT"
+  [color]="'#ed9c1c'"
+  [count]="alarmsCount">
+    <syndicate-card-list *ngIf="alarms" [data]="alarms" [type]="cardType.ALERT" (selectEmitter)="displayAlertDetail($event)"></syndicate-card-list>
+    <p *ngIf="!alarms">{{ 'alerts.noAlarms' | i18next }}</p>
+</syndicate-card>

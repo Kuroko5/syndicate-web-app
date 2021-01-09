@@ -1,0 +1,116 @@
+.variable {
+  position: relative;
+  height: 100%;
+  .header {
+    display: flex;
+    align-items: center;
+    padding: 20px 0 10px 40px;
+    syndicate-searchbar {
+      width: 360px;
+      margin-right: 80px;
+    }
+    #close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      cursor: pointer;
+    }
+  }
+  mat-dialog-content {
+    margin: 0;
+    padding: 0;
+    height: 340px;
+    .spinner {
+      margin: 10% auto;
+    }
+    .category {
+      display: flex;
+      align-items: center;
+      height: 48px;
+      width: 100%;
+      background-color: #ececec;
+      span {
+        margin-left: 40px;
+        color: #152935;
+        font-family: "OpenSansBold";
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
+    .mat-list {
+      padding: 10px 0;
+      .mat-list-item .mat-list-item-content {
+        padding: 0 80px;
+        .variable {
+          display: flex;
+          align-items: center;
+        }
+        mat-icon {
+          color: #004289;
+        }
+      }
+    }
+  }
+  mat-dialog-actions {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-top: 2px solid rgba(16, 76, 144, 0.1);
+    margin-bottom: 0;
+    justify-content: space-between;
+    padding: 28px 40px;
+    background-color: #ffffff;
+    button {
+      height: 40px;
+      width: 193px;
+      border-radius: 20px;
+      font-family: "OpenSans";
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+      outline: none;
+    }
+    #cancelBtn {
+      background-color: #ffffff;
+      color: #004289;
+      border: 1px solid #004289;
+      &:hover {
+        background-color: #004289;
+        color: #ffffff;
+      }
+    }
+    #confirmBtn {
+      background-color: #004289;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      &:hover {
+        background-color: rgba(16, 76, 144, 0.1);
+        color: #ffffff;
+      }
+      &.disabledBtn {
+        background-color: rgba(16, 76, 144, 0.1);
+        cursor: default;
+      }
+      .spinner {
+        display: inline-block;
+        position: absolute;
+        left: 20px;
+        top: 10px;
+      }
+    }
+  }
+
+  mat-checkbox {
+    .mat-checkbox-inner-container {
+      height: 18px;
+      width: 18px;
+    }
+    &.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+      background-color: #004289 !important;
+    }
+  }
+}

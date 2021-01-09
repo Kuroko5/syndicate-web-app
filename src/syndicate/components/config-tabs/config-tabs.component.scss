@@ -1,0 +1,49 @@
+.configTabs {
+  #plugins,
+  #variables,
+  #counters {
+    display: flex;
+    align-items: center;
+    mat-icon {
+      margin-right: 10px;
+      border-radius: 6px;
+      height: 24px;
+      width: 24px;
+      padding: 2px;
+      color: #FFFFFF;
+      background-color: #000000;
+    }
+    span {
+      font-size: 24px;
+      font-family: "OpenSans";
+    }
+  }
+  [aria-posinset="1"],
+  [aria-posinset="2"],
+  [aria-posinset="3"] {
+    &.mat-ripple.ng-star-inserted.mat-tab-label-active {
+      border-bottom: 3px solid #004289 !important;
+      #plugins,
+      #variables,
+      #counters {
+        color: #004289;
+        mat-icon {
+          background-color: #134E91;
+        }
+      }
+    }
+  }
+  [aria-posinset="1"],
+  [aria-posinset="2"],
+  [aria-posinset="3"] {
+    &.mat-ripple:hover {
+      background-color: rgba(0, 66, 137, 0.1);
+    }
+  }
+}
+mat-tab-body {
+  padding: 5px;
+  .mat-tab-body-content {
+    overflow: hidden;
+  }
+}

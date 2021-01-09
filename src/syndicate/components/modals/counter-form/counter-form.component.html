@@ -1,0 +1,104 @@
+<div class="counter">
+  <div class="header">
+    <h1 mat-dialog-title *ngIf="data.mode === 'add'">
+      {{ "config.counter.add.title" | i18next }}
+    </h1>
+    <h1 mat-dialog-title *ngIf="data.mode === 'edit'">
+      {{ "config.counter.edit.title" | i18next }}
+    </h1>
+    <mat-icon svgIcon="close" id="close" mat-dialog-close></mat-icon>
+  </div>
+  <mat-dialog-content>
+    <form id="counterForm" [formGroup]="counterForm" (ngSubmit)="onSubmit()">
+      <div class="choice">
+        <p class="description">
+          {{ 'config.counter.fields.variable.description' | i18next }}
+        </p>
+        <button mat-button class="btn" id="addVariable" (click)="addVariable()" type="button">
+          <mat-icon>add</mat-icon>
+          <span>{{ 'config.counter.fields.variable.add' | i18next }}</span>
+        </button>
+        <div class="variable" *ngIf="variable">
+          <div class="infos">
+            {{ variable.vId }} - {{ variable.format }}
+            <mat-icon svgIcon="trash" (click)="removeVariable()"></mat-icon>
+          </div>
+          <div class="initOn" *ngIf="variable.format === 'bool'">
+            <span> {{ 'config.counter.fields.variable.activate.false' | i18next }} </span>
+            <mat-slide-toggle formControlName="initOn" [(ngModel)]="initOn" [checked]="initOn"></mat-slide-toggle>
+            <span> {{ 'config.counter.fields.variable.activate.true' | i18next }} </span>
+          </div>
+        </div>
+        
+      </div>
+      <div class="row">
+        <!-- Counter label -->
+        <div class="id">
+          <mat-form-field appearance="outline">
+            <mat-label>{{ 'config.counter.fields.label' | i18next }}</mat-label>
+            <input
+              matInput
+              type="text"
+              id="label"
+              name="label"
+              formControlName="label"
+              required />
+              <mat-error class="error" *ngIf="counterForm.get('label').hasError('required')">
+                {{ 'config.counter.error.label' | i18next }}
+              </mat-error>
+          </mat-form-field>
+        </div>
+        <!-- Format -->
+        <div class="format">
+          <mat-form-field appearance="outline">
+            <mat-label>{{ 'config.counter.fields.unit.title' | i18next }}</mat-label>
+            <mat-select required 
+            formControlName="unit"
+            [value]="unit">
+              <mat-option *ngFor="let f of formats" [value]="f">
+                {{ 'config.counter.fields.unit.' + f | i18next }}
+              </mat-option>
+            </mat-select>
+            <mat-error class="error" *ngIf="counterForm.get('unit').hasError('required')">
+              {{ 'config.counter.error.unit' | i18next }}
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <!-- Description -->
+      <div class="description">
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'config.counter.fields.description' | i18next }}</mat-label>
+          <textarea
+            matInput
+            type="text"
+            id="description"
+            name="description"
+            formControlName="description"
+            required ></textarea>
+            <mat-error class="error" *ngIf="counterForm.get('description').hasError('required')">
+              {{ 'config.counter.error.description' | i18next }}
+            </mat-error>
+        </mat-form-field>
+      </div>
+      
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <!-- Cancel button -->
+    <button mat-button mat-dialog-close id="cancelBtn">
+      {{ "global.cancel" | i18next }}
+    </button>
+
+    <!-- Adding button -->
+    <button
+      id="createBtn"
+      mat-button
+      form="counterForm"
+      [disabled]="!counterForm.valid && !variable"
+      [ngClass]="{'disabledBtn': !counterForm.valid && !variable }">
+      <span *ngIf="data.mode === 'add'">{{ "global.add" | i18next }}</span>
+      <span *ngIf="data.mode === 'edit'">{{ "global.edit" | i18next }}</span>
+  </button>
+  </mat-dialog-actions>
+</div>

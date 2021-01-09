@@ -1,0 +1,210 @@
+<div class="variable">
+  <div class="header">
+    <h1 mat-dialog-title *ngIf="data.mode === 'add'">
+      {{ "config.variable.add.title" | i18next }}
+    </h1>
+    <h1 mat-dialog-title *ngIf="data.mode === 'edit'">
+      {{ "config.variable.edit.title" | i18next }}
+    </h1>
+    <mat-icon svgIcon="close" id="close" mat-dialog-close></mat-icon>
+  </div>
+  <mat-dialog-content>
+    <form id="variableForm" [formGroup]="variableForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <!-- Variable VId / label -->
+        <div class="label">
+          <mat-form-field appearance="outline">
+            <mat-label>{{ 'config.variable.fields.vId' | i18next }}</mat-label>
+            <input
+              matInput
+              type="text"
+              id="label"
+              name="vId"
+              [disabled]="data.mode === 'edit'"
+              formControlName="vId"
+              required />
+              <mat-error class="error" *ngIf="variableForm.get('vId').hasError('required')">
+                {{ 'config.variable.error.vId' | i18next }}
+              </mat-error>
+          </mat-form-field>
+        </div> 
+        <!-- Variable Type -->
+        <div class="type">
+          <mat-form-field appearance="outline">
+            <mat-label>{{ 'config.variable.fields.type' | i18next }}</mat-label>
+
+            <mat-select required formControlName="type"
+              placeholder="{{ 'config.variable.fields.type' | i18next }}"
+              (selectionChange)="onTypeSelection($event)"
+              [value]="type"
+            >
+              <mat-option *ngFor="let type of cardTypesStr; let index = i" [value]="type">
+                {{ type | i18next }}
+              </mat-option>
+            </mat-select>
+            
+            <mat-error class="error" *ngIf="variableForm.get('type').hasError('required')">
+              {{ 'form.missing.type' | i18next }}
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row-2">
+        <!-- unit -->
+        <div class="unit">
+          <mat-form-field appearance="outline">
+            <mat-label>{{ 'config.variable.fields.unit' | i18next }}</mat-label>
+            <input
+              matInput
+              type="text"
+              id="unit"
+              name="unit"
+              formControlName="unit"/>
+          </mat-form-field>
+        </div>
+        <!-- memorySlot / adress -->
+        <div class="memorySlot">
+          <mat-form-field appearance="outline">
+            <mat-label>{{ 'config.variable.fields.memorySlot' | i18next }}</mat-label>
+            <input
+              matInput
+              type="text"
+              id="memorySlot"
+              name="memorySlot"
+              formControlName="memorySlot"
+              required />
+              <mat-error class="error" *ngIf="variableForm.get('memorySlot').hasError('required')">
+                {{ 'config.variable.error.memorySlot' | i18next }}
+              </mat-error>
+          </mat-form-field>
+        </div>
+        <!-- Variable deviceId -->
+        <div class="deviceId">
+          <mat-form-field appearance="outline">
+            <mat-label>{{ 'config.variable.fields.device' | i18next }}</mat-label>
+            <mat-select required formControlName="deviceId">
+              <mat-option *ngFor="let device of devices" [value]="device._id">
+                {{ device._id }}
+              </mat-option>
+            </mat-select>
+            <mat-error class="error" *ngIf="variableForm.get('deviceId').hasError('required')">
+              {{ 'form.missing.type' | i18next }}
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <!-- Variable Description -->
+      <div class="area">
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'config.variable.fields.descr' | i18next }}</mat-label>
+          <textarea
+            matInput
+            type="text"
+            id="descr"
+            name="descr"
+            formControlName="descr"
+            required ></textarea>
+            <mat-error class="error" *ngIf="variableForm.get('descr').hasError('required')">
+              {{ 'config.variable.error.descr' | i18next }}
+            </mat-error>
+        </mat-form-field>
+      </div>
+      <!-- Variable advice -->
+      <div class="area">
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'config.variable.fields.advice' | i18next }}</mat-label>
+          <textarea
+            matInput
+            type="textarea"
+            id="advice"
+            name="advice"
+            formControlName="advice" ></textarea>
+        </mat-form-field>
+      </div>
+      <div class="row-3">
+        <!-- category -->
+        <div class="category">
+          <mat-form-field appearance="outline">
+            <mat-label>{{ 'config.variable.fields.category' | i18next }}</mat-label>
+            <input
+              matInput
+              type="text"
+              id="category"
+              name="category"
+              formControlName="category"
+              [matAutocomplete]="auto"
+              #matAutocompleteTrigger
+              [matAutocompletePosition]="'above'"
+              required />
+            <mat-autocomplete #auto="matAutocomplete">
+              <mat-option *ngFor="let option of filteredCat | async" [value]="option">{{option}}</mat-option>
+            </mat-autocomplete>
+            <mat-error class="error" *ngIf="variableForm.get('category').hasError('required')">
+              {{ 'config.variable.error.category' | i18next }}
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <!-- location -->
+        <div class="location">
+          <mat-form-field appearance="outline">
+            <mat-label>{{ 'config.variable.fields.location' | i18next }}</mat-label>
+            <input
+              matInput
+              type="text"
+              id="location"
+              name="location"
+              formControlName="location"/>
+          </mat-form-field>
+        </div>
+        <!-- Variable format -->
+        <div class="format">
+          <mat-form-field appearance="outline">
+            <mat-label>{{ 'config.variable.fields.format' | i18next }}</mat-label>
+
+            <mat-select required formControlName="format"
+              placeholder="{{ 'config.variable.fields.format' | i18next }}"
+              (selectionChange)="onFormatSelection($event)"
+              [value]="'config.variable.formats.' + format"
+            >
+              <mat-option *ngFor="let format of formats; let index = i" [value]="format">
+                {{ format | i18next }}
+              </mat-option>
+            </mat-select>
+
+            <mat-error class="error" *ngIf="variableForm.get('format').hasError('required')">
+              {{ 'form.missing.format' | i18next }}
+            </mat-error>
+          </mat-form-field>
+        </div>   
+        <!-- Variable Active -->
+        <div class="toggle">
+          <mat-label>{{ 'config.variable.fields.enable' | i18next }}</mat-label>
+          <mat-slide-toggle class="column" formControlName="enable" [checked]="enable"></mat-slide-toggle>
+        </div>
+
+        <!-- Variable display -->
+        <div class="toggle">
+          <mat-label>{{ 'config.variable.fields.isVisible' | i18next }}</mat-label>
+          <mat-slide-toggle class="column" formControlName="isVisible" [checked]="isVisible"></mat-slide-toggle>
+        </div>
+      </div>
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <!-- Cancel button -->
+    <button mat-button mat-dialog-close id="cancelBtn">
+      {{ "global.cancel" | i18next }}
+    </button>
+
+    <!-- Adding button -->
+    <button
+      id="createBtn"
+      mat-button
+      form="variableForm"
+      [disabled]="!variableForm.valid"
+      [ngClass]="{'disabledBtn': !variableForm.valid }">
+      <span *ngIf="data.mode === 'add'">{{ "global.add" | i18next }}</span>
+      <span *ngIf="data.mode === 'edit'">{{ "global.edit" | i18next }}</span>
+  </button>
+  </mat-dialog-actions>
+</div>

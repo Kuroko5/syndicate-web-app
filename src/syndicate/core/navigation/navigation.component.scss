@@ -1,0 +1,35 @@
+.navigation {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  div {
+    height: 50px;
+    margin-left: 11px;
+    display: flex;
+    align-items: center;
+    a {
+      outline: none;
+      text-decoration: none;
+      width: 289px;
+      display: flex;
+      align-items: center;
+      color: #333333;
+      mat-icon {
+        margin: 0 10px 0 14px;
+      }
+      span {
+        font-size: 18px;
+      }
+      &.active-link {
+        color: #004289;
+      }
+    }
+  }
+}
+.iconNav{
+  border: 1px solid;
+  border-radius: 5px;
+  width: 28px;
+  height: 28px;
+  background-color: #004289;
+}

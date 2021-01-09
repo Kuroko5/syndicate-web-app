@@ -1,0 +1,14 @@
+<syndicatendicate-datatable
+  [data]="variables"
+  [dataCount]="variablesCount ? variablesCount : '0'"
+  [type]="'variables'"
+  [selectLabel]="'categorie'"
+  [options]="categories"
+  [select]="true"
+  [searchbar]="true"
+  [displayedColumns]="['vId', 'val', 'unit', 'c', 'action']"
+  [pageSizeOptions]="[25, 50, 100]"
+  [footer]="true"
+  (refreshDataEmitter)="onRefreshVariables($event)"
+  (displayDetailEmitter)="displayVariableDetail($event)">
+</syndicatendicate-datatable>

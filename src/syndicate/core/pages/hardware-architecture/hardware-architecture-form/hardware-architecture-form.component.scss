@@ -1,0 +1,129 @@
+.form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  syndicatendicate-header {
+    order: 1;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    order: 2;
+    background-color: #ffffff;
+    padding: 20px 12.5px;
+
+    #station-form {
+      width: 100%;
+      height: 100%;
+
+      mat-form-field {
+        margin-top: 7px;
+        width: 100%;
+        font-family: "OpenSans";
+        font-size: 18px;
+
+        ::ng-deep .mat-form-field-outline {
+          top: 0;
+          color: #9AA7B6;
+        }
+
+        ::ng-deep .mat-form-field-infix {
+          border-top: 0;
+        }
+
+        ::placeholder {
+          color: #5A6872;
+          opacity: 1;
+        }
+
+        .error {
+          color: #ed1c2c;
+          font-size: 10px;
+          margin-top: 0;
+        }
+      }
+
+      .step {
+        .description {
+          font-family: "OpenSans";
+          font-size: 18px;
+          letter-spacing: 0;
+          line-height: 18px;
+        }
+
+        .variable:nth-of-type(1) {
+          margin-top: 20px;
+        }
+
+        .variable {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          color: #626262;
+          font-family: "OpenSans";
+          font-size: 18px;
+          letter-spacing: 0;
+          line-height: 22px;
+          border-bottom: 1px solid #979797;
+          padding: 20px;
+
+          mat-icon {
+            height: 14px;
+            width: 14px;
+            line-height: 14px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    #back {
+      margin: 0 0 0 24px;
+      width: auto;
+
+      span {
+        margin: 0 15px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        mat-icon {
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .btn {
+      height: 40px;
+      width: 200px;
+      border-radius: 20px;
+      font-family: "OpenSans";
+      font-size: 14px;
+      cursor: pointer;
+      outline: none;
+      line-height: 17px;
+      background-color: #134E91;
+      color: white;
+
+      &.stroked {
+        border-color: #134E91;
+        background-color: white;
+        color: #134E91;
+        border-width: 2px;
+      }
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+
+      #cancel {
+        margin: 0 0 0 24px;
+      }
+    }
+  }
+}

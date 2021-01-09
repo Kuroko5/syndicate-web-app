@@ -1,0 +1,548 @@
+{
+  "sidenav": {
+    "logout": "Log out"
+  },
+  "global": {
+    "pages": {
+      "name": {
+        "dashboard": "Dashboard",
+        "alerts": "Defects and alarms",
+        "conditions": "Conditions of operation",
+        "variables": "Machine variables",
+        "documents": "Documents",
+        "reports": "Reports",
+        "degraded": "Degraded mode",
+        "admin": "Administration",
+        "views": "Custom views",
+        "hardware_architecture": "Hardware architecture",
+        "hardware_architecture_form": "Create new station",
+        "user": "Create a user",
+        "config": "Configuration"
+      }
+    },
+    "display": {
+      "one": "See",
+      "all": "See more"
+    },
+    "action": {
+      "confirmation": "Are you sure you want to do this ?",
+      "cancel": "Do you wish to cancel your current modifications ?"
+    },
+    "close": "Close",
+    "at": "at",
+    "from": "From",
+    "to": "To",
+    "cancel": "Cancel",
+    "set": "Set",
+    "description": "Description",
+    "operator": "Operator",
+    "advice": "Conseil",
+    "start": "Start",
+    "end": "End",
+    "search": "Search",
+    "connect": "Connection",
+    "login": "Login",
+    "confirm": "Confirmation",
+    "yes": "Yes",
+    "create": "Create",
+    "edit": "Modify",
+    "delete": "Delete",
+    "currentValue": "Current value",
+    "noDescription": "No description given",
+    "noConsequences": "No consequences given",
+    "noAdvice": "No advice given",
+    "add": "Add",
+    "remove": "Remove",
+    "error": "Error",
+    "back": "Back",
+    "next": "Next",
+    "category": "Category",
+    "unit": "Unit",
+    "location": "Location",
+    "format": "Format",
+    "device": "Device ID"
+  },
+  "equipment": {
+    "none": "No default or alarm",
+    "default": "default",
+    "alert": "alarm"
+  },
+  "form": {
+    "username": "Username",
+    "password": "Password",
+    "missing": {
+      "username": "User field is required",
+      "password": "Password is required",
+      "name": "Title is required",
+      "type": "Type is required",
+      "description": "Description is required",
+      "category": "Category is required"
+    },
+    "wrongLogs": "Incorrect username or password",
+    "tooltip": {
+      "show": "Show password.",
+      "hide": "Hide password."
+    }
+  },
+  "alerts": {
+    "defects": "Defects in progress",
+    "noDefects": "No defect in progress",
+    "alarms": "Alarms in progress",
+    "noAlarms": "No alarm in progress",
+    "historical": "History"
+  },
+  "variables": {
+    "inProgress": "Variables in progress",
+    "historical": "History of variables",
+    "noVariables": "There is not new variable",
+    "add": "Add variables",
+    "noVariablesTitle": "No variables to display",
+    "noVariablesContent": "Please add variables or click here to add",
+    "counter": {
+      "title": "Operating time",
+      "type": {
+        "custom": "custom",
+        "variable": "variable"
+      }
+    }
+  },
+  "datatable": {
+    "title": "Name",
+    "documentCategory": "Folder",
+    "documentType": "Type",
+    "reportType": "Type",
+    "name": "Name",
+    "vId": "Name",
+    "d": "Date",
+    "startDate": "Start Date",
+    "endDate": "End Date",
+    "t": "Type",
+    "c": "Category",
+    "numericCode": "Numeric Code",
+    "population": "Population",
+    "region": "Region",
+    "state": "State",
+    "condition": "Condition",
+    "updatedAt": "Date",
+    "createdAt": "Date of creation",
+    "category": "Category",
+    "type": "Type",
+    "operator": "Operator",
+    "val": "Value",
+    "unit": "SI Unit",
+    "visibility": "Ordinates visibility",
+    "color": "Color",
+    "ordinateScale": "Ordinate scale",
+    "min": "Min",
+    "max": "Max",
+    "actions": "Actions",
+    "result": "State",
+    "descr": "Condition",
+    "action": "Action",
+    "code": "Code",
+    "label": "Label",
+    "description": "Description",
+    "_id": "Identifier",
+    "constructionId": "Construction ID",
+    "machineId": "Machine ID",
+    "equipmentId": "Equipment ID",
+    "ip": "IP Address",
+    "enable": "State",
+    "deviceId": "Plugin ID",
+    "footer": {
+      "itemsPerPageLabel": "Items per page"
+    },
+    "select": {
+      "categorie": "Category",
+      "type": "Type of documents",
+      "allType": "All types",
+      "all": "All",
+      "deviceId": "Plugin ID",
+      "machineId": "Machine/Equipment ID",
+      "types": {
+        "all": "All"
+      }
+    },
+    "datetime": {
+      "placeholder": "Choose a start and end date"
+    },
+    "username": "Username",
+    "permissions": "Permissions",
+    "profiles_label": "Profiles",
+    "views_label": "Custom views",
+    "value": "Operating time",
+    "date": "Last reset date",
+    "variable": "Variable used"
+  },
+  "reports": {
+    "recentReports": "Recent reports",
+    "noReports": "There is not new report",
+    "create": "Create a report",
+    "edit": "Modify the rapport",
+    "delete": {
+      "confirmation": "Are you sure you want to delete this report ?"
+    },
+    "new": "Create a new report",
+    "name": "Title of the report",
+    "type": "Type of rapport"
+  },
+  "conditions": {
+    "noConditions": "There is not conditions of operation"
+  },
+  "degradedMode": {
+    "active": "Active",
+    "inactive": "Inactive",
+    "activeDate": "Release date",
+    "timer": "Remaining time",
+    "validityTimer": "Validity period",
+    "consequences": "Consequences",
+    "startMode": "Start this action",
+    "stopAction": "Stop action",
+    "stopActionConfirm": "Do you really want to stop this action ?"
+  },
+  "documents": {
+    "add": "Add document",
+    "back_to_folders": "Back to folders",
+    "edit": "Modify document",
+    "category": "Folder",
+    "type": "Type",
+    "name": "Title of the document",
+    "addFile": "Add file",
+    "file": "File",
+    "tooLarge": "The selected file is too large. The maximum size is 150MB.",
+    "delete": {
+      "transfert": "The documents contained in this folder will be transferred to the following folder",
+      "confirmation": "Are you sure you want to delete this document ?"
+    },
+    "categories": {
+      "add": "Create a folder",
+      "rename": "Rename",
+      "delete": "Delete",
+      "error": {
+        "maxlength": "You have exceeded the number of characters allowed !",
+        "label": "This name is already in use !",
+        "default": "This Folder is a default folder, no modification can be made."
+      }
+    }
+  },
+  "admin": {
+    "users": "Users",
+    "profiles": "Profiles",
+    "permissions": "Permissions",
+    "profiles_list": "Profiles of user",
+    "permissions_list": "Permissions",
+    "views_list": "Related views",
+    "order": "Change order",
+    "delete": {
+      "user": "Are you sure you want to delete this user ?",
+      "profile": "Are you sure you want to delete this profile ?",
+      "view": "Are you sure you want to delete this view ?",
+      "dashboard_card": "Are you sure you want to delete this card ?"
+    },
+    "dashboard": {
+      "tab": "Dashboard",
+      "new_card": "Add a new card",
+      "card": {
+        "type": "Card type :",
+        "select_type": "Select a card type",
+        "name": "Label",
+        "name_placeholder": "Enter a name",
+        "type_placeholder": "Card type",
+        "name_error": "A name must be set.",
+        "add_conditions": "Add conditions",
+        "add_variables": "Add variables",
+        "infos": {
+          "default": "This card displays the last 5 faults still active",
+          "alert": "This card displays the last 5 alarms still active",
+          "condition": "This card displays the status of 10 operating conditions with priority not being validated.",
+          "report": "This map displays the last 5 reports.",
+          "equipment": "Select the custom views to display on the card:",
+          "machine": {
+            "step": "Card infos",
+            "step_order": "Variables order",
+            "value_placeholder": "Label",
+            "order": "Drag and drop the items to change their order on the card:",
+            "display": {
+              "one_column": "Display in 1 column",
+              "two_column": "Display in 2 columns"
+            }
+          }
+        }
+      },
+      "empty": "The dashboard is empty, you can administrate it directly in your profile to add some cards."
+    },
+    "cards": {
+      "types": {
+        "default": "Defaults",
+        "alert": "Alerts",
+        "condition": "Conditions of operation",
+        "machine": "State machine",
+        "equipment": "Faulty equipments",
+        "report": "Recent reports"
+      }
+    },
+    "views": "Custom views",
+    "create": {
+      "user": "Create a user",
+      "profile": "Create a profile",
+      "view": "Create a new view"
+    },
+    "profile": {
+      "title": {
+        "create": "Create new profile",
+        "update": "Update profile"
+      },
+      "infos": {
+        "step": "Infos and rights of the profile",
+        "name": "Profile name",
+        "name_hint": "Enter a name",
+        "name_error": "The name is mandatory (letters and numbers only)",
+        "description": "Description of the profile",
+        "description_hint": "Enter a description",
+        "description_error": "The description is mandatory",
+        "title": "Select the rights to associate to this profile :"
+      },
+      "views": {
+        "step": "Associated views",
+        "title": "Select the personalized views to associate to this profile :"
+      },
+      "details": "Profile details of"
+    },
+    "view": {
+      "arrange": {
+        "title": "Change the order of the stations",
+        "description": "Drag and drop the elements of the list to change the order of the views."
+      },
+      "title": {
+        "new": "Create a view",
+        "update": "Update the view"
+      },
+      "info": {
+        "step": "View information",
+        "name": "View name",
+        "name_required": "The name of the view is mandatory"
+      },
+      "cards": {
+        "step": "Add cards",
+        "name_placeholder": "Card name",
+        "type_placeholder": "Card type",
+        "new_card": "Add a new card",
+        "add_conditions": "Add conditions",
+        "add_variables": "Add variables"
+      },
+      "order": {
+        "step": "Cards order",
+        "desc": "Drag the elements around to change the order on the page.",
+        "create": "Create the view",
+        "update": "Update the view",
+        "type": "Card type :"
+      }
+    },
+    "user": {
+      "infos": {
+        "name": "Identifier",
+        "name_hint": "firstname.lastname",
+        "name_error": "The identifier must be like firstname.lastname",
+        "password": "Password",
+        "password_hint": "******",
+        "title": "Select profiles to associate to the user :"
+      }
+    }
+  },
+  "views": {
+    "arrange": {
+      "action": "Change order of tabs",
+      "title": "Changer order of tabs",
+      "description": "Drag and drop the elements of the list to change the order on the custom views."
+    },
+    "default": "Defaults",
+    "alert": "Alarms",
+    "machine": "Variables machines"
+  },
+  "colorPicker": {
+    "edit": "Modify the color of this variable:"
+  },
+  "hardware_architecture": {
+    "add_station": {
+      "action": "Add a station",
+      "title": "Create a new station",
+      "back": "Go back to previous step",
+      "infos": {
+        "step": "Information of the station",
+        "name": "Name of the station",
+        "missing_name": "The station's name is mandatory",
+        "name_hint": "Enter a name",
+        "ip": "IP address of the station",
+        "missing_ip": "The station's ip address is mandatory",
+        "ip_hint": "Enter the ip address of the station (192.168.58.1)",
+        "wrong_ip_format": "The format of the IP address is not in the correct format."
+      },
+      "communication": {
+        "step": "Communication state",
+        "description": "Select the communication state variable :",
+        "add_variable": "Add a variable"
+      },
+      "hardware": {
+        "step": "Hardware state",
+        "description": "Select the hardware state variable :",
+        "add_variable": "Add a variable"
+      },
+      "variables": {
+        "step": "Variables",
+        "description": "Select the hardware variables to add to the station :",
+        "add_variables": "Add variables"
+      },
+      "create": "Create the station",
+      "update": "Update the station",
+      "cancel_message": "Do you wish to cancel your current modifications ?"
+    },
+    "arrange": {
+      "action": "Changer order",
+      "title": "Change the order of the stations",
+      "description": "Drag and drop the elements of the list to change the order on the hardware architecture scheme."
+    },
+    "delete": {
+      "confirmation": "Do you really want to delete this station ?"
+    },
+    "communication": "Communication",
+    "hardware": "Hardware",
+    "ip": "IP address",
+    "details": "Details",
+    "ping": "Ping",
+    "ping_modal": {
+      "title": "Ping on station",
+      "progress": "Ping en progress",
+      "send": "Pinging",
+      "success": "Ping ok",
+      "error": "Ping not ok",
+      "replyFrom": "Reply from",
+      "timeout": "Request timed out"
+    }
+  },
+  "config": {
+    "state": {
+      "enable": "Enable",
+      "disable": "Disable"
+    },
+    "device": {
+      "title": "Plugins",
+      "fields": {
+        "_id": "Identifier",
+        "ip": "IP address",
+        "constructionId": "Construction Site ID",
+        "machineId": "Machine ID",
+        "equipmentId": "Equipment ID",
+        "rack": "Rack number",
+        "slot": "Slot number",
+        "period": "Update frequency (s)"
+      },
+      "add": {
+        "title": "Add a plugin"
+      },
+      "edit": {
+        "title": "Edit a plugin"
+      },
+      "delete": {
+        "confirmation": "Do you really want to delete this plugin ?"
+      }, 
+      "error": {
+        "_id": "The Identifier is required",
+        "ip": "The IP adress is required",
+        "not_ip": "The IP adress has not the correct format",
+        "constructionId": "The Construction Site ID is required",
+        "machineId": "Machine ID is required",
+        "equipmentId": "Equipment ID is required",
+        "rack": "Rack number is required",
+        "slot": "Slot number is required",
+        "period": "Update frequency (s) is required",
+        "number_min": "The value cannot be less than O"
+      }
+    },
+    "variable": {
+      "title": "Variables",
+      "fields": {
+        "vId": "Label",
+        "device": "Device Id",
+        "unit": "Unit",
+        "memorySlot": "Memory Slot",
+        "advice": "Advice",
+        "descr": "Description",
+        "type": "Type",
+        "category": "Category",
+        "location": "Location",
+        "format": "Format",
+        "isVisible": "Is Visible",
+        "enable": "Enable"
+      },
+      "error": {
+        "vId": "Label is required",
+        "device": "Plugin Id is required",
+        "memorySlot": "Emplacement Mémoire is required",
+        "descr": "Description is required",
+        "type": "Type is required",
+        "category": "Catégorie is required",
+        "format": "Format is required"
+      },
+      "types": {
+        "default": "Defaults",
+        "alert": "Alerts",
+        "machine": "Machine"
+      },
+      "formats": {
+        "int": "Number",
+        "float": "Decimal number",
+        "bool": "Boolean"
+      },
+      "add": {
+        "title": "Add a variable"
+      },
+      "edit": {
+        "title": "Edit the variable"
+      },
+      "delete": {
+        "confirmation": "Do you really want to delete this variable ?",
+        "error": "Error",
+        "message": "Unable to delete because data already exists for this variable. If you don't want it to appear in the application anymore, you can do so with the “hide” variable option."
+      }
+    },
+    "counter": {
+      "title": "Custom counters",
+      "reset": "Reset",
+      "fields": {
+        "_id": "Username",
+        "label": "Label",
+        "description": "Description",
+        "variable": {
+          "description": "Select variable",
+          "add": "Add variable",
+          "activate": {
+            "true": "Activate in value << True >>",
+            "false": "Activate in value << False >>"
+          }
+        },
+        "unit": {
+          "title": "Format",
+          "day": "Day",
+          "hour": "Hour",
+          "minute": "Minute",
+          "all": "Day - Hour - Minute"  
+        }
+      },
+      "error": {
+        "label": "Label is required",
+        "description": "Description is required",
+        "unit": "Format is required",
+        "variable": "Variable is required"
+      },
+      "add": {
+        "title": "Create a counter"
+      },
+      "edit": {
+        "title": "Edit a counter"
+      },
+      "delete": {
+        "confirmation": "Do you really want to delete this counter ?"
+      }
+    }
+  }
+}

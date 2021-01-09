@@ -1,0 +1,203 @@
+.degradedMode {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  syndicatendicate-header {
+    order: 1;
+  }
+  .container {
+    flex: 1;
+    order: 2;
+    background-color: #ffffff;
+    padding: 0;
+    mat-accordion mat-expansion-panel {
+      &:last-of-type,
+      &:first-of-type {
+        border-radius: 0;
+      }
+      mat-expansion-panel-header {
+        padding: 0 60px;
+        .mat-expansion-panel-header-title {
+          flex-grow: 0;
+          margin-right: 96px;
+        }
+        mat-panel-title {
+          color: #626262;
+          font-family: "OpenSans";
+          font-size: 21px;
+          display: flex;
+          align-items: center;
+          .statut {
+            width: 18px;
+            height: 18px;
+            border-radius: 9px;
+            margin-right: 10px;
+          }
+        }
+        mat-panel-description {
+          display: flex;
+          align-items: center;
+          color: #333333;
+          font-family: "OpenSans";
+          font-size: 14px;
+          letter-spacing: 0.25px;
+          mat-icon {
+            width: 18px;
+            height: 18px;
+          }
+          .name {
+            flex-grow: 1;
+            color: #626262;
+            font-family: "OpenSans";
+            font-size: 21px;
+            min-width: 30%;
+          }
+          .active {
+            display: flex;
+            flex-direction: row;
+            .labels,
+            .values {
+              display: flex;
+              flex-direction: column;
+              margin-right: 22px;
+              justify-content: center;
+              div {
+                display: flex;
+                align-items: center;
+                height: 19px;
+              }
+              mat-icon {
+                margin-right: 5px;
+              }
+            }
+            .stopAction {
+              margin-left: 78px;
+              .stopActionBtn {
+                box-sizing: border-box;
+                height: 40px;
+                width: 120px;
+                border: 1px solid #0f4c90;
+                border-radius: 20px;
+                color: #0f4c90;
+                background-color: inherit;
+                justify-content: center;
+                font-family: "OpenSans";
+                font-size: 16px;
+                display: flex;
+                cursor: pointer;
+                outline: none;
+                align-content: center;
+                &:hover {
+                  color: #ffffff;
+                  background-color: #0f4c90;
+                }
+              }
+            }
+          }
+        }
+        .mat-expansion-indicator::after {
+          padding: 6px;
+        }
+      }
+      .mat-expansion-panel-content {
+        background-color: #ececec;
+        .mat-expansion-panel-body {
+          padding: 30px 60px 50px;
+        }
+        .panelContent {
+          .validityTimer {
+            display: flex;
+            align-items: center;
+            mat-icon {
+              height: 24px;
+              width: 24px;
+              margin-right: 5px;
+            }
+            span {
+              color: #333333;
+              font-family: "OpenSansBold";
+              font-size: 21px;
+              font-weight: bold;
+            }
+            .timerValue {
+              margin-left: 10px;
+              font-size: 18px;
+              font-family: "OpenSans";
+              font-weight: normal;
+            }
+          }
+          .description {
+            color: #333333;
+            margin-top: 30px;
+            h3 {
+              font-family: "OpenSansBold";
+              font-size: 21px;
+              font-weight: bold;
+              margin: 0;
+            }
+            p {
+              margin: 20px 0 30px 0;
+              font-size: 18px;
+              font-family: "OpenSans";
+              font-weight: normal;
+            }
+          }
+          .consequences {
+            box-sizing: border-box;
+            border: 1px solid rgba(247, 181, 0, 0.6);
+            border-radius: 6px;
+            background-color: rgba(255, 187, 0, 0.2);
+            color: #ed9c1c;
+            padding: 20px;
+            margin-bottom: 20px;
+            .title {
+              display: flex;
+              align-items: center;
+              margin-bottom: 25px;
+              mat-icon {
+                width: 21px;
+                height: 21px;
+              }
+              h3 {
+                margin: 0;
+                font-family: "OpenSansBold";
+                font-size: 21px;
+                font-weight: bold;
+              }
+            }
+          }
+          .action {
+            button {
+              box-sizing: border-box;
+              height: 41px;
+              width: 192px;
+              border: 1px solid #ed9c1c;
+              border-radius: 20px;
+              color: #ed9c1c;
+              background-color: inherit;
+              justify-content: space-evenly;
+              font-family: "OpenSans";
+              font-size: 16px;
+              display: flex;
+              cursor: pointer;
+              outline: none;
+              align-content: center;
+              mat-icon {
+                width: 16px;
+                height: 16px;
+              }
+            }
+            .stopModeBtn {
+              border: 1px solid #0f4c90;
+              color: #0f4c90;
+              &:hover {
+                color: #ffffff;
+                background-color: #0f4c90;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

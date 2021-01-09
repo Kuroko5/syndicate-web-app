@@ -1,0 +1,20 @@
+<div class="description">
+  <div class="header">
+    <h1 mat-dialog-title>
+      {{ "admin.profiles_list" | i18next }}
+    </h1>
+    <mat-icon svgIcon="close" id="close" [mat-dialog-close]="true"></mat-icon>
+  </div>
+  <mat-dialog-content>
+    <div class="profiles">
+      <div class="row" *ngFor="let profile of data.profiles">
+        {{ profile.label }}
+      </div>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="true">
+      {{ "global.close" | i18next }}
+    </button>
+  </mat-dialog-actions>
+</div>

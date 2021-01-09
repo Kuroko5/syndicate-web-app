@@ -1,0 +1,95 @@
+<div class="graph">
+  <div class="graph-card">
+    <ngx-charts-line-chart *ngIf="results.length > 0" [scheme]="colorScheme" [results]="results" [gradient]="false"
+      [yAxis]="true" [yScaleMin]="yScaleMin" [yScaleMax]="yScaleMax" [autoScale]="true" [roundDomains]="true"
+      [rotateXAxisTicks]="true" [xAxis]="true" [xAxisTickFormatting]="xFormatting">
+      <ng-template #tooltipTemplate let-model="model">
+        <div class="tooltipTemplate">
+          <span class="variable">{{ model.series }}</span>
+          <br />
+          <span class="date">{{ xFormatting(model.name) }}</span>
+          <br />
+          <span class="value">{{ model.value }}</span>
+        </div>
+      </ng-template>
+    </ngx-charts-line-chart>
+  </div>
+  <div class="graph-table" *ngIf="dataVariables.length > 0">
+    <table mat-table [dataSource]="dataSource">
+      <!-- Visibility Column -->
+      <ng-container matColumnDef="visibility">
+        <th mat-header-cell *matHeaderCellDef>
+          <span class="header">{{ "datatable.visibility" | i18next }}</span>
+        </th>
+        <td mat-cell *matCellDef="let element">
+          <mat-radio-group name="variable">
+            <mat-radio-button [value]="element" [checked]="element.vId === currentSelectedVariable"
+              (change)="onChecked(element)">
+            </mat-radio-button>
+          </mat-radio-group>
+        </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="color">
+        <th mat-header-cell *matHeaderCellDef>
+          <span class="header">{{ "datatable.color" | i18next }} </span>
+        </th>
+        <td mat-cell *matCellDef="let element, let i = index">
+          <syndicate-color-picker [color]="colorScheme.domain[i]" (event)="onSelected($event, i)"></syndicate-color-picker>
+
+        </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>
+          <span class="header">{{ "datatable.name" | i18next }} </span>
+        </th>
+        <td mat-cell *matCellDef="let element"> {{element.vId}} </td>
+      </ng-container>
+
+      <!-- Category Column -->
+      <ng-container matColumnDef="category">
+        <th mat-header-cell *matHeaderCellDef>
+          <span class="header">{{ "datatable.category" | i18next }}</span>
+        </th>
+        <td mat-cell *matCellDef="let element"> {{element.category}} </td>
+      </ng-container>
+
+      <!-- Ordinate Scale Column -->
+      <ng-container matColumnDef="ordinateScale">
+        <th mat-header-cell *matHeaderCellDef>
+          <span class="header">{{ "datatable.ordinateScale" | i18next }}</span>
+        </th>
+        <td mat-cell *matCellDef="let element">
+          <div class="scale">
+            <input type="number" class="first" placeholder="{{ 'datatable.min' | i18next }}"
+              [(ngModel)]="element.minScale" (change)="onChange(element)" />
+            <input type="number" placeholder="{{ 'datatable.max' | i18next }}" [(ngModel)]="element.maxScale"
+              (change)="onChange(element)" />
+          </div>
+        </td>
+      </ng-container>
+
+      <!-- Actions Column -->
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef>
+          <span class="header">{{ "datatable.actions" | i18next }}</span>
+        </th>
+        <td mat-cell *matCellDef="let element, let i = index">
+          <div class="actions">
+            <mat-icon class="info" svgIcon="info" matTooltip="{{ element.descr }}" [matTooltipPosition]="'left'">
+            </mat-icon>
+            <mat-icon svgIcon="eye" class="eye" (click)="onShow(i)" *ngIf="!results[i].isVisible"></mat-icon>
+            <mat-icon svgIcon="hide" class="hide" (click)="onHide(i)" *ngIf="results[i].isVisible"></mat-icon>
+            <mat-icon svgIcon="close" (click)="onRemove(element)"></mat-icon>
+          </div>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</div>

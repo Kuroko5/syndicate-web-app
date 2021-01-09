@@ -1,0 +1,72 @@
+<div class="form">
+  <syndicatendicatendicate-header [pageName]syndicatepageNsyndicatee"></syndicate-header>
+  <div class="container">
+    <mat-horizontal-stepper (selectionChange)="onStepChange($event)" [linear]="true" #stepper>
+      <mat-step
+        label="{{ 'admin.view.info.step' | i18next }}"
+        [stepControl]="viewForm"
+      >
+        <form id="view" [formGroup]="viewForm">
+          <div class="infos-basic">
+            <!-- Name input -->
+            <div class="name">
+              <mat-label>{{ 'admin.view.info.name' | i18next }}</mat-label>
+              <mat-form-field appearance="outline">
+                <input
+                  matInput
+                  type="text"
+                  id="name"
+                  name="name"
+                  formControlName="name"
+                  required />
+                <mat-error class="error">
+                  {{ 'admin.view.info.name_required' | i18next }}
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step
+        label="{{ 'admin.view.cards.step' | i18next }}">
+        <div class="step">
+          <div class="cards">
+            <syndicatendicatendicate-view-card-form *ngFor="let card of cardList; index as i" [card]="card" (cardChange)="onCardChange(syndicatevent,syndicate)"></syndicate-view-card-form>
+          </div>
+          <button mat-stroked-button class="btn stroked" [style.width]="'auto'" (click)="addViewCard()">
+            <mat-icon svgIcon="add"></mat-icon>
+            {{ 'admin.view.cards.new_card' | i18next }}
+          </button>
+        </div>
+      </mat-step>
+      <mat-step
+        label="{{ 'admin.view.order.step' | i18next }}">
+        <div class="step order">
+          <p>{{ 'admin.view.order.desc' | i18next }}</p>
+          <div class="card-group" cdkDropList cdkDropListOrientation="horizontal" (cdkDropListDropped)="dragDrop($event)">
+            <div class="card-drag" *ngFor="let card of cardList; index as i" cdkDrag cdkDragBoundary=".card-group" >
+              <div class="card-drag_placeholder" *cdkDragPlaceholder></div>
+              <div class="card-drag_element">
+                <div class="card-drag_element-header">
+                  <p>{{ card.label }}</p>
+                  <mat-icon svgIcon="dragdrop" cdkDragHandle></mat-icon>
+                </div>
+                <p>{{ "admin.view.order.type" | i18next }}</p>
+                <p [style.font-family]="'OpenSansBold'">{{ 'admin.cards.types.' + card.type | i18next }}</p>
+                <mat-icon svgIcon="trash" (click)="removeCard(i)"></mat-icon>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-step>
+    </mat-horizontal-stepper>
+    <div class="buttons">
+      <button mat-stroked-button id="cancel" class="btn stroked" (click)="previousStepClick()">
+        {{ (currentStepIndex < 1 ? "global.cancel" : "global.back") | i18next }}
+      </button>
+      <button mat-stroked-button class="btn" (click)="nextStepClick()" *ngIf="nextButtonVisible()">
+        {{ (currentStepIndex < 2 ? "global.next" : (update ? "admin.view.order.update" : "admin.view.order.create")) | i18next }}
+      </button>
+    </div>
+  </div>
+</div>

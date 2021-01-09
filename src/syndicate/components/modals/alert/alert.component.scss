@@ -1,0 +1,139 @@
+.alert {
+  .header {
+    position: relative;
+    padding: 27px 43px 0px 43px;
+    border-bottom: 1px solid rgba(16, 76, 144, 0.1);
+    h1 {
+      margin: 0;
+      color: #004289;
+      font-family: "OpenSansBold";
+      font-size: 24px;
+      font-weight: bold;
+    }
+    #close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      cursor: pointer;
+    }
+    .subTitle {
+      color: #626262;
+      font-family: "OpenSans";
+      font-size: 16px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      .date {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-left: 25px;
+        mat-icon {
+          margin-right: 5px;
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+  }
+  mat-dialog-content {
+    margin: 0;
+
+    .infos {
+      padding: 30px 44px 0 44px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      row-gap: 18px;
+      font-family: "OpenSans";
+
+      b {
+        font-family: "OpenSansBold";
+      }
+    }
+
+    p {
+      font-family: "OpenSans";
+      font-size: 16px;
+    }
+    .description {
+      padding: 30px 44px 0 44px;
+      h4 {
+        margin: 0;
+        color: #333333;
+        font-family: "OpenSansBold";
+        font-size: 18px;
+        font-weight: bold;
+      }
+    }
+    .advice {
+      margin: 42px 17px 30px 17px;
+      padding: 21px 23px;
+      box-sizing: border-box;
+      border: 1px solid #1c6420;
+      border-radius: 6px;
+      color: #1c6420;
+      .advice-head {
+        height: 30px;
+      }
+      h4 {
+        margin: 0;
+        font-family: "OpenSansBold";
+        font-size: 18px;
+        font-weight: bold;
+        float: left;
+      }
+      .edit {
+        float: right;
+      }
+      p {
+        margin-bottom: 0;
+      }
+      .advice-field {
+          width: 100%;
+          height: 100px;
+          font-family: "OpenSans";
+          font-size: 16px;
+          border: 0;
+      }
+      .advice-buttons {
+          text-align: center;
+          button {
+            height: 30px;
+            width: 150px;
+            border-radius: 20px;
+            font-family: "OpenSans";
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+            outline: none;
+            margin: 15px;
+            &:hover {
+              background-color: #004289;
+              color: #ffffff
+            }
+          }
+      }
+    }
+  }
+  mat-dialog-actions {
+    margin: 0;
+    justify-content: center;
+    padding: 0 0 33px 0;
+    button {
+      height: 40px;
+      width: 193px;
+      border-radius: 20px;
+      background-color: #004289;
+      color: #ffffff;
+      font-family: "OpenSans";
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+      outline: none;
+      &:hover {
+        background-color: rgba(16, 76, 144, 0.1);
+        color: #ffffff
+      }
+    }
+  }
+}

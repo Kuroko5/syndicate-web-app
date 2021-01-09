@@ -1,0 +1,6 @@
+<syndicate-card
+  [title]="card.label"
+  [type]="cardType.MACHINE"
+  [color]="'#004289'">
+    <syndicate-card-list *ngIf="machines" [data]="machines" [type]="cardType.MACHINE" [column]="card.column"></syndicate-card-list>
+</syndicate-card>

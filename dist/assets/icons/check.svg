@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 58 (101010) - https://sketch.com -->
+    <title>B84201B9-26A9-48E5-8F73-1EFD4180A08F@3x</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M12,2 C6.48,2 2,6.48 2,12 C2,17.52 6.48,22 12,22 C17.52,22 22,17.52 22,12 C22,6.48 17.52,2 12,2 Z M9.29,16.29 L5.7,12.7 C5.51274733,12.5131685 5.40751439,12.2595176 5.40751439,11.995 C5.40751439,11.7304824 5.51274733,11.4768315 5.7,11.29 C6.09,10.9 6.72,10.9 7.11,11.29 L10,14.17 L16.88,7.29 C17.27,6.9 17.9,6.9 18.29,7.29 C18.68,7.68 18.68,8.31 18.29,8.7 L10.7,16.29 C10.32,16.68 9.68,16.68 9.29,16.29 Z" id="path-check"></path>
+    </defs>
+    <g id="Découpe" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-190.000000, -195.000000)" id="check-Icon/Form/Check">
+            <g transform="translate(190.000000, 195.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-check"></use>
+                </mask>
+                <use id="Icon/action/check_circle_24px" fill="currentColor" xlink:href="#path-check"></use>
+            </g>
+        </g>
+    </g>
+</svg>

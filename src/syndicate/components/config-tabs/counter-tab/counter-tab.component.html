@@ -1,0 +1,18 @@
+<syndicate-datatable
+  [type]="'config_counter'"
+  [data]="counters"
+  [dataCount]="count"
+  [displayedColumns]="['label', 'variable', 'type', 'value', 'action']"
+  [pageSizeOptions]="[25, 50, 100]"
+  [footer]="true"
+  [add]="true"
+  [addLabel]="'config.counter.add.title' | i18next"
+  [addPermission]="'CONFIG_COUNTERS_CREATE'"
+  [editPermission]="'CONFIG_COUNTERS_UPDATE'"
+  [deletePermission]="'CONFIG_COUNTERS_DELETE'"
+  (refreshDataEmitter)="onRefresh($event)"
+  (resetEmitter)="onReset($event)"
+  (editEmitter)="onEdit($event)"
+  (removeEmitter)="onRemove($event)"
+  (addEmitter)="onAdd()">
+</syndicate-datatable>
