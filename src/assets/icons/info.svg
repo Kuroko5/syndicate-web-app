@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="25px" height="24px" viewBox="0 0 25 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <path d="M12,9 C12.5522847,9 13,8.55228475 13,8 C13,7.44771525 12.5522847,7 12,7 C11.4477153,7 11,7.44771525 11,8 C11,8.55228475 11.4477153,9 12,9 Z M12,17 C12.55,17 13,16.55 13,16 L13,12 C13,11.45 12.55,11 12,11 C11.45,11 11,11.45 11,12 L11,16 C11,16.55 11.45,17 12,17 Z M12,2 C6.48,2 2,6.48 2,12 C2,17.52 6.48,22 12,22 C17.52,22 22,17.52 22,12 C22,6.48 17.52,2 12,2 Z M12,20 C7.59,20 4,16.41 4,12 C4,7.59 7.59,4 12,4 C16.41,4 20,7.59 20,12 C20,16.41 16.41,20 12,20 Z" id="path-info"></path>
+    </defs>
+    <g id="Découpe" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-190.000000, -907.000000)" id="Icon/Form/Info">
+            <g transform="translate(190.000000, 907.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-info"></use>
+                </mask>
+                <use id="Icon/action/info_outline_24px" fill="currentColor" xlink:href="#path-info"></use>
+            </g>
+        </g>
+    </g>
+</svg>

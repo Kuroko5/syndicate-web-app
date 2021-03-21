@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 58 (101010) - https://sketch.com -->
+    <title>C28E8DD0-DCEF-41D0-B06D-6E228BF3C4C0@3x</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M4.47,20.50375 L19.53,20.50375 C21.07,20.50375 22.03,18.83375 21.26,17.50375 L13.73,4.49375 C12.96,3.16375 11.04,3.16375 10.27,4.49375 L2.74,17.50375 C1.97,18.83375 2.93,20.50375 4.47,20.50375 Z M12,13.50375 C11.45,13.50375 11,13.05375 11,12.50375 L11,10.50375 C11,9.95375 11.45,9.50375 12,9.50375 C12.55,9.50375 13,9.95375 13,10.50375 L13,12.50375 C13,13.05375 12.55,13.50375 12,13.50375 Z M13,17.50375 L11,17.50375 L11,15.50375 L13,15.50375 L13,17.50375 Z" id="path-warning"></path>
+    </defs>
+    <g id="Découpe" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-190.000000, -127.000000)" id="warning-Icon/Form/Warning">
+            <g transform="translate(190.000000, 127.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-warning"></use>
+                </mask>
+                <use id="Icon/alert/warning_24px" fill="currentColor" xlink:href="#path-warning"></use>
+            </g>
+        </g>
+    </g>
+</svg>

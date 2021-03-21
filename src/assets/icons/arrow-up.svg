@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>16E50F01-F8D7-4B1B-B271-9ADEB1DAF2C6@3x</title>
+    <defs>
+        <path d="M2.125,6.9999928 L6.005,3.1199928 L9.885,6.9999928 C10.275,7.3899928 10.905,7.3899928 11.295,6.9999928 C11.685,6.6099928 11.685,5.9799928 11.295,5.5899928 L6.705,0.999992803 C6.51816847,0.812740129 6.26451764,0.707507197 6,0.707507197 C5.73548236,0.707507197 5.48183153,0.812740129 5.295,0.999992803 L0.705,5.5899928 C0.315,5.9799928 0.315,6.6099928 0.705,6.9999928 C1.095,7.3799928 1.735,7.3899928 2.125,6.9999928 Z" id="path-arrow-up"></path>
+    </defs>
+    <g id="Découpe" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-885.000000, -516.000000)" id="arrow-up">
+            <g transform="translate(891.000000, 524.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-arrow-up"></use>
+                </mask>
+                <use id="Icon/hardware/keyboard_arrow_up_24px" fill="#6E7F95" xlink:href="#path-arrow-up"></use>
+            </g>
+        </g>
+    </g>
+</svg>
