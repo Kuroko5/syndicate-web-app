@@ -1,7 +1,0 @@
-<syndicate-card
-  [title]="card.label"
-  [type]="cardType.REPORT"
-  [color]="'#004289'">
-    <syndicate-card-list *ngIf="reports" [data]="reports" [type]="cardType.REPORT" (selectEmitter)="displayDefaultDetail($event)"></syndicate-card-list>
-    <p *ngIf="!reports">{{ 'reports.noReports' | i18next }}</p>
-</syndicate-card>
