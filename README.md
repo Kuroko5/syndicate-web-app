@@ -1,196 +1,236 @@
-[![@coreui angular](https://img.shields.io/badge/@coreui%20-angular-lightgrey.svg?style=flat-square)](https://github.com/coreui/angular)
-[![npm package][npm-coreui-angular-badge]][npm-coreui-angular]
-[![NPM downloads][npm-coreui-angular-download]][npm-coreui-angular]  
-[![@coreui coreui](https://img.shields.io/badge/@coreui%20-coreui-lightgrey.svg?style=flat-square)](https://github.com/coreui/coreui)
-[![npm package][npm-coreui-badge]][npm-coreui]
-[![NPM downloads][npm-coreui-download]][npm-coreui]  
-![angular](https://img.shields.io/badge/angular-^11.0.9-lightgrey.svg?style=flat-square&logo=angular)  
+# [Paper Kit 2 Angular - Free Bootstrap 4 UI Kit](https://demos.creative-tim.com/paper-kit-2-angular/)
 
-[npm-coreui-angular]: https://www.npmjs.com/package/@coreui/angular  
-[npm-coreui-angular-badge]: https://img.shields.io/npm/v/@coreui/angular.png?style=flat-square  
-[npm-coreui-angular-download]: https://img.shields.io/npm/dm/@coreui/angular.svg?style=flat-square  
-[npm-coreui]: https://www.npmjs.com/package/@coreui/coreui
-[npm-coreui-badge]: https://img.shields.io/npm/v/@coreui/coreui.png?style=flat-square
-[npm-coreui-download]: https://img.shields.io/npm/dm/@coreui/coreui.svg?style=flat-square
+![version](https://img.shields.io/badge/version-1.4.0-blue.svg) [![license][license-badge]][LICENSE] [![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/paper-kit-2-angular.svg?maxAge=2592000)](https://github.com/creativetimofficial/paper-kit-2-angular/issues?q=is%3Aopen+is%3Aissue) [![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/creativetimofficial/paper-kit-2-angular.svg?maxAge=259200)](https://github.com/creativetimofficial/paper-kit-2-angular/issues?q=is%3Aissue+is%3Aclosed) [![Chat](https://img.shields.io/badge/chat-on%20discord-7289da.svg)](https://discord.gg/E4aHAQy)
+![Paper Kit 2 Angular](https://s3.amazonaws.com/creativetim_bucket/products/65/original/opt_pk2_angular_thumbnail.jpg "Paper Kit 2 Angular Free")
 
-# CoreUI Free Angular 2+ Admin Template [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/intent/tweet?text=CoreUI%20-%20Free%20Bootstrap%204%20Admin%20Template%20&url=https://coreui.io&hashtags=bootstrap,admin,template,dashboard,panel,free,angular,react,vue)
+Paper Kit 2 Angular is a free Bootstrap 4 UI Kit with pale colors, beautiful typography built for Angular 7.
 
-Please help us on [Product Hunt](https://www.producthunt.com/posts/coreui-open-source-bootstrap-4-admin-template-with-angular-2-react-js-vue-js-support) and [Designer News](https://www.designernews.co/stories/81127). Thanks in advance!
+All components are fully responsive and look great on every screen size. Transitions, shadows, colors, they all resemble the flow you would have using pieces of paper.
 
-Curious why I decided to create CoreUI? Please read this article: [Jack of all trades, master of none. Why Bootstrap Admin Templates suck.](https://medium.com/@lukaszholeczek/jack-of-all-trades-master-of-none-5ea53ef8a1f#.7eqx1bcd8)
+We have created Paper UI Kit kit having pastel colors and paper in mind. It feels light, fresh and easy to go through.
 
-CoreUI is an Open Source Bootstrap Admin Template. But CoreUI is not just another Admin Template. It goes way beyond hitherto admin templates thanks to transparent code and file structure. And if that's not enough, let’s just add that CoreUI consists bunch of unique features and over 1000 high quality icons.
+Paper Kit 2 Angular is using Ng Bootstrap (https://ng-bootstrap.github.io/#/home), as core framework.
 
-CoreUI is based on Bootstrap 4 and offers 6 versions: 
-[HTML5 AJAX](https://github.com/coreui/coreui-free-bootstrap-admin-template-ajax), 
-[HTML5](https://github.com/coreui/coreui-free-angular-admin-template), 
-[Angular 2+](https://github.com/coreui/coreui-free-angular-admin-template), 
-[React.js](https://github.com/coreui/coreui-free-react-admin-template), 
-[Vue.js](https://github.com/coreui/coreui-free-vue-admin-template)
- & [.NET Core 2](https://github.com/mrholek/CoreUI-NET).
+**Bootstrap 4 support**
 
-CoreUI is meant to be the UX game changer. Pure & transparent code is devoid of redundant components, so the app is light enough to offer ultimate user experience. This means mobile devices also, where the navigation is just as easy and intuitive as on a desktop or laptop. The CoreUI Layout API lets you customize your project for almost any device – be it Mobile, Web or WebApp – CoreUI covers them all!
+Paper Kit 2 Angular is built on top of Bootstrap 4, so it fully supports it. Most of the elements from the framework are re-designed to resemble sheets of paper and color pastels. If the are elements that we have not touched, they will gracefully fall back to the Bootstrap 4 default.
 
 ## Table of Contents
 
-- [CoreUI Free Angular 2+ Admin Template ![Tweet](https://twitter.com/intent/tweet?text=CoreUI%20-%20Free%20Bootstrap%204%20Admin%20Template%20&url=https://coreui.io&hashtags=bootstrap,admin,template,dashboard,panel,free,angular,react,vue)](#coreui-free-angular-2-admin-template-tweethttpstwittercomintenttweettextcoreui20-20free20bootstrap20420admin20template20urlhttpscoreuiiohashtagsbootstrapadmintemplatedashboardpanelfreeangularreactvue)
-  - [Table of Contents](#table-of-contents)
-  - [Versions](#versions)
-  - [CoreUI Pro](#coreui-pro)
-  - [Admin Templates built on top of CoreUI Pro](#admin-templates-built-on-top-of-coreui-pro)
-      - [Prerequisites](#prerequisites)
-          - [Node.js](#nodejs)
-          - [Angular CLI](#angular-cli)
-        - [Update to Angular 11](#update-to-angular-9)
-  - [Installation](#installation)
-    - [Clone repo](#clone-repo)
-  - [Usage](#usage)
-  - [What's included](#whats-included)
-  - [Documentation](#documentation)
-  - [Contributing](#contributing)
-  - [Versioning](#versioning)
-  - [Creators](#creators)
-  - [Community](#community)
-    - [Community Projects](#community-projects)
-  - [Copyright and license](#copyright-and-license)
-  - [Support CoreUI Development](#support-coreui-development)
+* [Versions](#versions)
+* [Demo](#demo)
+* [Quick Start](#quick-start)
+* [Documentation](#documentation)
+* [File Structure](#file-structure)
+* [Browser Support](#browser-support)
+* [Resources](#resources)
+* [Reporting Issues](#reporting-issues)
+* [Technical Support or Questions](#technical-support-or-questions)
+* [Licensing](#licensing)
+* [Useful Links](#useful-links)
+
 
 ## Versions
 
-CoreUI is built on top of Bootstrap 4 and supports popular frameworks.
+[<img src="https://s3.amazonaws.com/creativetim_bucket/github/html.png" width="60" height="60" />](https://www.creative-tim.com/product/paper-kit-2)
+[<img src="https://s3.amazonaws.com/creativetim_bucket/github/angular.png" width="60" height="60" />](https://www.creative-tim.com/product/paper-kit-2-angular)
 
-* [CoreUI Free Bootstrap Admin Template](https://github.com/coreui/coreui-free-bootstrap-admin-template)
-* [CoreUI Free Bootstrap Admin Template (Ajax)](https://github.com/coreui/coreui-free-bootstrap-admin-template-ajax)
-* [CoreUI Free Angular 2+ Admin Template](https://github.com/coreui/coreui-free-angular-admin-template)
-* [CoreUI Free React.js Admin Template](https://github.com/coreui/coreui-free-react-admin-template)
-* [CoreUI Free Vue.js Admin Template](https://github.com/coreui/coreui-free-vue-admin-template)
 
-## CoreUI Pro
+| HTML | Angular |
+| --- | --- |
+| ![Paper Kit 2 HTML](https://s3.amazonaws.com/creativetim_bucket/products/61/opt_pk2_thumbnail.jpg) | ![Paper Kit 2 Angular](https://s3.amazonaws.com/creativetim_bucket/products/65/opt_pk2_angular_thumbnail.jpg)
 
-* 💪  [CoreUI Pro Bootstrap Admin Template](https://coreui.io/pro/)
-* 💪  [CoreUI Pro Bootstrap Admin Template (Ajax)](https://coreui.io/pro/)
-* 💪  [CoreUI Pro Angular Admin Template](https://coreui.io/pro/angular)
-* 💪  [CoreUI Pro React Admin Template](https://coreui.io/pro/react)
-* 💪  [CoreUI Pro Vue Admin Template](https://coreui.io/pro/vue)
+## Demo
 
-## Admin Templates built on top of CoreUI Pro
+- [Start page](https://demos.creative-tim.com/paper-kit-2-angular/home)
+- [Landing Page](https://demos.creative-tim.com/paper-kit-2-angular/landing)
+- [Register Page](https://demos.creative-tim.com/paper-kit-2-angular/signup)
+- [Profile Page](https://demos.creative-tim.com/paper-kit-2-angular/user-profile)
 
-| CoreUI Pro | Prime | Root | Alba | Leaf |
-| --- | --- | --- | --- | --- |
-| [![CoreUI Pro Admin Template](https://coreui.io/assets/img/example-coureui.jpg)](https://coreui.io/pro/angular/)| [![Prime Admin Template](https://coreui.io/assets/img/responsive-prime.png)](https://coreui.io/admin-templates/angular/prime/?support=1)| [![Root Admin Template](https://coreui.io/assets/img/responsive-root.png)](https://coreui.io/admin-templates/angular/root/?support=1)| [![Alba Admin Template](https://coreui.io/assets/img/responsive-alba.png)](https://coreui.io/admin-templates/angular/alba/?support=1)| [![Leaf Admin Template](https://coreui.io/assets/img/responsive-leaf.png)](https://coreui.io/admin-templates/angular/leaf/?support=1)
+[View More](https://demos.creative-tim.com/paper-kit-2-angular/).
 
-#### Prerequisites
-Before you begin, make sure your development environment includes `Node.js®` and an `npm` package manager.
 
-###### Node.js
-Angular 11 requires `Node.js` version 10.13 or later.
+## Quick start
 
-- To check your version, run `node -v` in a terminal/console window.
-- To get `Node.js`, go to [nodejs.org](https://nodejs.org/).
+Quick start options:
 
-###### Angular CLI
-Install the Angular CLI globally using a terminal/console window.
-```bash
-npm install -g @angular/cli
-```
+- [Download from Github](https://github.com/creativetimofficial/pk2-angular.git).
+- [Download from Creative Tim](https://www.creative-tim.com/product/paper-kit-2-angular).
+- Clone the repo: `git clone https://github.com/creativetimofficial/pk2-angular.git`.
 
-##### Update to Angular 11
-Angular 11 requires `Node.js` version 10.13 or newer    
-Update guide - see: [https://update.angular.io](https://update.angular.io)
-
-## Installation
-
-### Clone repo
-
-``` bash
-# clone the repo
-$ git clone https://github.com/coreui/coreui-free-angular-admin-template.git my-project
-
-# go into app's directory
-$ cd my-project
-
-# install app's dependencies
-$ npm install
-```
-
-## Usage
-
-``` bash
-# serve with hot reload at localhost:4200.
-$ ng serve
-
-# build for production with minification
-$ ng build
-```
-
-## What's included
-
-Within the download you'll find the following directories and files, logically grouping common assets and providing both compiled and minified variations. You'll see something like this:
-
-```
-free-angular-admin-template/
-├── e2e/
-├── src/
-│   ├── app/
-│   ├── assets/
-│   ├── environments/
-│   ├── scss/
-│   ├── index.html
-│   └── ...
-├── .angular-cli.json
-├── ...
-├── package.json
-└── ...
-```
 
 ## Documentation
 
-The documentation for the CoreUI Free Angularp Admin Template is hosted at our website [CoreUI](https://coreui.io/angular/)
+Once you download the archive, you will be able find a tutorial page inside it explaining how to start using it. You can also check the [documentation online](https://demos.creative-tim.com/paper-kit-2-angular/documentation/tutorial).
 
-## Contributing
+## File Structure
 
-Please read through our [contributing guidelines](https://github.com/coreui/coreui-free-angular-admin-template/blob/master/CONTRIBUTING.md). Included are directions for opening issues, coding standards, and notes on development.
+Within the download you'll find the following directories and files:
 
-Editor preferences are available in the [editor config](https://github.com/coreui/coreui-free-angular-admin-template/blob/master/.editorconfig) for easy use in common text editors. Read more and download plugins at <http://editorconfig.org>.
+```
+paper-kit-2-angular
+├── CHANGELOG.md
+├── ISSUE_TEMPLATE.md
+├── LICENSE.md
+├── README.md
+├── angular.json
+├── documentation
+│   ├── css
+│   ├── js
+│   └── tutorial-components.html
+├── e2e
+├── karma.conf.js
+├── package-lock.json
+├── package.json
+├── protractor.conf.js
+├── src
+│   ├── app
+│   │   ├── app.component.html
+│   │   ├── app.component.scss
+│   │   ├── app.component.spec.ts
+│   │   ├── app.component.ts
+│   │   ├── app.module.ts
+│   │   ├── app.routing.ts
+│   │   ├── components
+│   │   │   ├── basicelements
+│   │   │   │   ├── basicelements.component.html
+│   │   │   │   ├── basicelements.component.scss
+│   │   │   │   ├── basicelements.component.spec.ts
+│   │   │   │   └── basicelements.component.ts
+│   │   │   ├── components.component.html
+│   │   │   ├── components.component.ts
+│   │   │   ├── components.module.ts
+│   │   │   ├── modal
+│   │   │   │   ├── modal.component.html
+│   │   │   │   ├── modal.component.scss
+│   │   │   │   ├── modal.component.spec.ts
+│   │   │   │   └── modal.component.ts
+│   │   │   ├── navigation
+│   │   │   │   ├── navigation.component.html
+│   │   │   │   ├── navigation.component.scss
+│   │   │   │   ├── navigation.component.spec.ts
+│   │   │   │   └── navigation.component.ts
+│   │   │   ├── notification
+│   │   │   │   ├── notification.component.html
+│   │   │   │   ├── notification.component.scss
+│   │   │   │   ├── notification.component.spec.ts
+│   │   │   │   └── notification.component.ts
+│   │   │   ├── nucleoicons
+│   │   │   │   ├── nucleoicons.component.html
+│   │   │   │   ├── nucleoicons.component.scss
+│   │   │   │   ├── nucleoicons.component.spec.ts
+│   │   │   │   └── nucleoicons.component.ts
+│   │   │   └── typography
+│   │   │       ├── typography.component.html
+│   │   │       ├── typography.component.scss
+│   │   │       ├── typography.component.spec.ts
+│   │   │       └── typography.component.ts
+│   │   ├── home
+│   │   │   ├── home.component.html
+│   │   │   ├── home.component.scss
+│   │   │   ├── home.component.spec.ts
+│   │   │   ├── home.component.ts
+│   │   │   └── home.module.ts
+│   │   ├── landing
+│   │   │   ├── landing.component.html
+│   │   │   ├── landing.component.scss
+│   │   │   ├── landing.component.spec.ts
+│   │   │   └── landing.component.ts
+│   │   ├── profile
+│   │   │   ├── profile.component.html
+│   │   │   ├── profile.component.scss
+│   │   │   ├── profile.component.spec.ts
+│   │   │   └── profile.component.ts
+│   │   ├── shared
+│   │   │   ├── footer
+│   │   │   │   ├── footer.component.html
+│   │   │   │   ├── footer.component.scss
+│   │   │   │   ├── footer.component.spec.ts
+│   │   │   │   └── footer.component.ts
+│   │   │   └── navbar
+│   │   │       ├── navbar.component.html
+│   │   │       ├── navbar.component.scss
+│   │   │       ├── navbar.component.spec.ts
+│   │   │       └── navbar.component.ts
+│   │   └── signup
+│   │       ├── signup.component.html
+│   │       ├── signup.component.scss
+│   │       ├── signup.component.spec.ts
+│   │       └── signup.component.ts
+│   ├── assets
+│   │   ├── css
+│   │   ├── fonts
+│   │   ├── img=
+│   │   └── sass
+│   │       ├── paper-kit
+│   │       └── paper-kit.scss
+│   ├── environments
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── main.ts
+│   ├── polyfills.ts
+│   ├── styles.scss
+│   ├── test.ts
+│   ├── tsconfig.app.json
+│   ├── tsconfig.spec.json
+│   └── typings.d.ts
+├── tsconfig.json
+└── tslint.json
 
-## Versioning
+```
+## Browser Support
 
-For transparency into our release cycle and in striving to maintain backward compatibility, CoreUI Free Admin Template is maintained under [the Semantic Versioning guidelines](http://semver.org/).
+At present, we officially aim to support the last two versions of the following browsers:
 
-See [the Releases section of our project](https://github.com/coreui/coreui-free-angular-admin-template/releases) for changelogs for each release version.
+<img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/chrome.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/firefox.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/edge.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/safari.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/opera.png" width="64" height="64">
 
-## Creators
 
-**Łukasz Holeczek**
+## Resources
+- [Live Preview](https://demos.creative-tim.com/paper-kit-2-angular/)
+- Download Page: https://www.creative-tim.com/product/paper-kit-2-angular
+- Documentation is [here](https://demos.creative-tim.com/paper-kit-2-angular/documentation/tutorial)
+- License Agreement: https://www.creative-tim.com/license
+- Support: https://www.creative-tim.com/contact-us
+- Issues: [Github Issues Page](https://github.com/creativetimofficial/paper-kit-2-angular/issues)
 
-* <https://twitter.com/lukaszholeczek>
-* <https://github.com/mrholek>
+## Reporting Issues
+We use GitHub Issues as the official bug tracker for the Paper Kit 2 Angular. Here are some advices for our users that want to report an issue:
 
-**Andrzej Kopański**
+1. Make sure that you are using the latest version of the Paper Kit 2 Angular. Check the CHANGELOG from your dashboard on our [website](https://www.creative-tim.com/).
+2. Providing us reproducible steps for the issue will shorten the time it takes for it to be fixed.
+3. Some issues may be browser specific, so specifying in what browser you encountered the issue might help.
 
-* <https://github.com/xidedix>
+## Technical Support or Questions
 
-## Community
+If you have questions or need help integrating the product please [contact us](https://www.creative-tim.com/contact-us) instead of opening an issue.
 
-Get updates on CoreUI's development and chat with the project maintainers and community members.
+## Licensing
 
-- Follow [@core_ui on Twitter](https://twitter.com/core_ui).
-- Read and subscribe to [CoreUI Blog](https://coreui.io/blog/).
+- Copyright 2018 Creative Tim (https://www.creative-tim.com)
+- Creative Tim [license](https://www.creative-tim.com/license)
 
-### Community Projects
+## Useful Links
 
-Some of projects created by community but not maintained by CoreUI team.
+- [More products](https://www.creative-tim.com/bootstrap-themes) from Creative Tim
 
-* [NuxtJS + Vue CoreUI](https://github.com/muhibbudins/nuxt-coreui)
-* [Colmena](https://github.com/colmena/colmena)
+- [Tutorials](https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w)
 
-## Copyright and license
+- [Freebies](https://www.creative-tim.com/bootstrap-themes/free) from Creative Tim
 
-copyright 2017-2021 creativeLabs Łukasz Holeczek. Code released under [the MIT license](https://github.com/coreui/coreui-free-angular-admin-template/blob/master/LICENSE).
-There is only one limitation you can't re-distribute the CoreUI as stock. You can’t do this if you modify the CoreUI. In past we faced some problems with persons who tried to sell CoreUI based templates.
+- [Affiliate Program](https://www.creative-tim.com/affiliates/new) (earn money)
 
-## Support CoreUI Development
+##### Social Media
 
-CoreUI is an MIT licensed open source project and completely free to use. However, the amount of effort needed to maintain and develop new features for the project is not sustainable without proper financial backing. You can support development by donating on [PayPal](https://www.paypal.me/holeczek), buying [CoreUI Pro Version](https://coreui.io/pro) or buying one of our [premium admin templates](https://genesisui.com/?support=1).
+Twitter: <https://twitter.com/CreativeTim>
 
-As of now I am exploring the possibility of working on CoreUI full-time - if you are a business that is building core products using CoreUI, I am also open to conversations regarding custom sponsorship / consulting arrangements. Get in touch on [Twitter](https://twitter.com/lukaszholeczek).
+Facebook: <https://www.facebook.com/CreativeTim>
+
+Dribbble: <https://dribbble.com/creativetim>
+
+Google+: <https://plus.google.com/+CreativetimPage>
+
+Instagram: <https://instagram.com/creativetimofficial>
+
+[CHANGELOG]: ./CHANGELOG.md
+[LICENSE]: ./LICENSE.md
+[license-badge]: https://img.shields.io/badge/license-MIT-blue.svg

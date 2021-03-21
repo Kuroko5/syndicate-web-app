@@ -1,0 +1,90 @@
+<div class="wrapper">
+    <div class="page-header" style="background-image: url('./assets/img/login-image.jpg');">
+        <div class="filter"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6 mr-auto ml-auto">
+                      <div class="card card-register">
+                          <h3 class="title">Welcome</h3>
+                          <div class="social-line text-center">
+                              <a href="#" class="btn btn-neutral btn-facebook btn-just-icon">
+                                  <i class="fa fa-facebook-square"></i>
+                              </a>
+                              <a href="#" class="btn btn-neutral btn-google btn-just-icon">
+                                  <i class="fa fa-google-plus"></i>
+                              </a>
+                              <a href="#" class="btn btn-neutral btn-twitter btn-just-icon">
+                                  <i class="fa fa-twitter"></i>
+                              </a>
+                          </div>
+                          <div class="loginForm">
+                            <div class="header">
+                              <h1>{{ "global.connect" | i18next }}</h1>
+                            </div>
+                            <div class="content">
+                              <form [formGroup]="loginForm" (ngSubmit)="login()" id="loginForm">
+                                <mat-form-field>
+                                  <input matInput type="text" placeholder="{{ 'form.username' | i18next }}" formControlName="username" />
+                                  <mat-error class="error" *ngIf="loginForm.get('username').hasError('required')">
+                                    {{ 'form.missing.username' | i18next }}
+                                  </mat-error>
+                                </mat-form-field>
+                                <mat-form-field>
+                                  <input matInput [type]="show ? 'text': 'password'" placeholder="{{ 'form.password' | i18next }}"
+                                    formControlName="password" autocomplete="off" />
+                                  <mat-icon class="eye" svgIcon="eye" matSuffix (click)="password()"
+                                    [matTooltip]="'form.tooltip.show' | i18next" *ngIf="!show"></mat-icon>
+                                  <mat-icon class="hide" svgIcon="hide" matSuffix (click)="password()"
+                                    [matTooltip]="'form.tooltip.hide' | i18next" *ngIf="show"></mat-icon>
+                                  <mat-error class="error" *ngIf="loginForm.get('password').hasError('required')">
+                                    {{ 'form.missing.password' | i18next }}
+                                  </mat-error>
+                                </mat-form-field>
+                              </form>
+                            </div>
+                            <div class="wrongCredentials">
+                              <p *ngIf="wrongCredentials">{{ 'form.wrongLogs' | i18next }}</p>
+                            </div>
+                            <div class="footer">
+                              <button mat-button form="loginForm" [disabled]="!loginForm.valid || loading"
+                                [ngClass]="{'disabledBtn': !loginForm.valid || loading}">
+                                <mat-spinner *ngIf="loading" class="spinner" diameter="20"></mat-spinner>
+                                {{ "global.login" | i18next }}
+                              </button>
+                            </div>
+                          </div>
+                          <!-- <form class="register-form">
+                              <label>Email</label>
+                              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                      <i class="nc-icon nc-email-85"></i>
+                                  </span>
+                                </div>
+
+                                  <input type="text" class="form-control" placeholder="Email" (focus)="focus=true" (blur)="focus=false" >
+                              </div>
+
+                              <label>Password</label>
+                              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus1===true}">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                      <i class="nc-icon nc-key-25"></i>
+                                  </span>
+                                </div>
+                                  <input type="text" class="form-control" placeholder="Password" (focus)="focus1=true" (blur)="focus1=false" >
+                              </div>
+                              <button class="btn btn-danger btn-block btn-round">Register</button>
+                          </form> -->
+                          <div class="forgot">
+                              <a href="#" class="btn btn-link btn-danger">Forgot password?</a>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="footer register-footer text-center">
+                    <h6> footer</h6>
+                </div>
+            </div>
+    </div>
+</div>
